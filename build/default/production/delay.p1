@@ -1,0 +1,110 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"52 delay.c
+[; ;delay.c: 52: void DELAY_us(uint16_t us_count)
+[v _DELAY_us `(v ~T0 @X0 1 ef1`us ]
+"53
+[; ;delay.c: 53: {
+{
+[e :U _DELAY_us ]
+"52
+[; ;delay.c: 52: void DELAY_us(uint16_t us_count)
+[v _us_count `us ~T0 @X0 1 r1 ]
+"53
+[; ;delay.c: 53: {
+[f ]
+"54
+[; ;delay.c: 54:     while (us_count != 0)
+[e $U 2  ]
+[e :U 3 ]
+"55
+[; ;delay.c: 55:     {
+{
+"56
+[; ;delay.c: 56:         us_count--;
+[e -- _us_count -> -> 1 `i `us ]
+"57
+[; ;delay.c: 57:     }
+}
+[e :U 2 ]
+"54
+[; ;delay.c: 54:     while (us_count != 0)
+[e $ != -> _us_count `ui -> -> 0 `i `ui 3  ]
+[e :U 4 ]
+"58
+[; ;delay.c: 58: }
+[e :UE 1 ]
+}
+"70
+[; ;delay.c: 70: void DELAY_ms(uint16_t ms_count)
+[v _DELAY_ms `(v ~T0 @X0 1 ef1`us ]
+"71
+[; ;delay.c: 71: {
+{
+[e :U _DELAY_ms ]
+"70
+[; ;delay.c: 70: void DELAY_ms(uint16_t ms_count)
+[v _ms_count `us ~T0 @X0 1 r1 ]
+"71
+[; ;delay.c: 71: {
+[f ]
+"72
+[; ;delay.c: 72:     while (ms_count != 0)
+[e $U 6  ]
+[e :U 7 ]
+"73
+[; ;delay.c: 73:     {
+{
+"74
+[; ;delay.c: 74:         DELAY_us(300u);
+[e ( _DELAY_us (1 -> -> 300 `ui `us ]
+"75
+[; ;delay.c: 75:         ms_count--;
+[e -- _ms_count -> -> 1 `i `us ]
+"76
+[; ;delay.c: 76:     }
+}
+[e :U 6 ]
+"72
+[; ;delay.c: 72:     while (ms_count != 0)
+[e $ != -> _ms_count `ui -> -> 0 `i `ui 7  ]
+[e :U 8 ]
+"77
+[; ;delay.c: 77: }
+[e :UE 5 ]
+}
+"96
+[; ;delay.c: 96: void DELAY_sec(uint16_t sec_count)
+[v _DELAY_sec `(v ~T0 @X0 1 ef1`us ]
+"97
+[; ;delay.c: 97: {
+{
+[e :U _DELAY_sec ]
+"96
+[; ;delay.c: 96: void DELAY_sec(uint16_t sec_count)
+[v _sec_count `us ~T0 @X0 1 r1 ]
+"97
+[; ;delay.c: 97: {
+[f ]
+"98
+[; ;delay.c: 98:     while (sec_count != 0) {
+[e $U 10  ]
+[e :U 11 ]
+{
+"99
+[; ;delay.c: 99:         DELAY_ms(1000);
+[e ( _DELAY_ms (1 -> -> 1000 `i `us ]
+"100
+[; ;delay.c: 100:         sec_count--;
+[e -- _sec_count -> -> 1 `i `us ]
+"101
+[; ;delay.c: 101:     }
+}
+[e :U 10 ]
+"98
+[; ;delay.c: 98:     while (sec_count != 0) {
+[e $ != -> _sec_count `ui -> -> 0 `i `ui 11  ]
+[e :U 12 ]
+"102
+[; ;delay.c: 102: }
+[e :UE 9 ]
+}
