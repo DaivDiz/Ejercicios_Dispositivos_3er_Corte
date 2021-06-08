@@ -6242,8 +6242,6 @@ double yn(int, double);
 
 
 
-
-
 # 1 "./glcd.h" 1
 # 27 "./glcd.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdarg.h" 1 3
@@ -6341,458 +6339,257 @@ void GLCD_HorizontalGraph(uint8_t var_barGraphNumber_u8, uint8_t var_percentageV
 
 void GLCD_Grahp(uint8_t val);
 void glcd_DataWrite(uint8_t dat);
-# 18 "main.c" 2
+# 16 "main.c" 2
 
 
 
 
-
-
-
-long valPot;
-
-
-int setpoint;
-int min=0,max=1023;
-int secc=8;
-int val;
-
-long temp;
-
-
-int opc=4;
 long map();
-void tapas();
+void tapas(),reset();
+int column(),row();
+
+
+uint8_t pA=0x02;
+uint8_t pB;
+uint8_t v1;
+int index=0;
+
+
+int xM,yM,ayM,cond;
+char comb[4][4]={ '1','2','3','A',
+                    '4','5','6','B',
+                    '7','8','9','C',
+                    '*','0','#','D' };
+
+
+int sX=40,sY=1,nC=4,xSC,ySC,contChar=1;
+char valM;
+
+
+int codColor;
+char codTec[4];
+
+
+int saldo;
+
+
+long LDR;
+
 
 void main()
 {
-    switch(opc){
+    xSC=sX;
+    ySC=sY;
 
-        case 1:
+    TRISA=0x21;
 
-            TRISE=0x03;
-            TRISC=0x07;
 
-            int xStart=15;
-            int x=xStart;
+    TRISE=0x07;
 
-            for(int i=1;i<128;i++){
-                GLCD_SetCursor(7,i);
-                if(i%10==0){
-                    glcd_DataWrite(0xC0);
-                }else{
-                    glcd_DataWrite(0x80);
-                }
-            }
 
-            int P,PH,PL,den,maxF;
+    TRISC=0xFF;
+
+    ADCON1=0x0E;
+    ADCON0=0x01;
+    ADCON2=0xB1;
+
+    GLCD_Init();
+    while(1){
+
+
+        if(PORTCbits.RC0==0)
+        {
+
             while(1){
 
-                for(int j=7;j>-1;j--){
-                    GLCD_SetCursor(j,0);
-                    if(j%2==0){
-                        glcd_DataWrite(0xFF);
-                        GLCD_SetCursor(j,1);
-                        glcd_DataWrite(0x01);
-                    } else {
-                        glcd_DataWrite(0xFF);
-                    }
-                }
-
-
-
-                ADCON1=0x0E;
                 ADCON0=0x01;
                 ADCON2=0xB1;
+                ADCON0bits.GODONE=1;
 
-                ADCON0=0x03;
-
-
-                if(ADCON0bits.GODONE!=0){
-                    valPot=(ADRESH*255)+(ADRESL);
-                    if(valPot>max){
-                        valPot=max;
-                    }
-
-
-
-
-                }
-
-                setpoint=(PORTA>>1)+(PORTE<<5)+(PORTC<<7);
-
-                for(int i=0;i<128;i++){
-                    int F=setpoint/160;
-                    GLCD_SetCursor(F,i);
-                    glcd_DataWrite(0x80);
-                }
-
-
-                val=(max/secc);
-
-                x++;
-
-                if(x>128){
-                    x=xStart;
-                }
-
-                den=(max/64);
-
-                PL=(valPot/den);
-
-                PH=((PL*secc)/63);
-
-                maxF=6;
-
-                if(PH>maxF){
-                    PH=maxF;
-                }
-
-                P=(valPot%secc);
-
-                uint8_t PointPos=powf(2,P);
-
-
-
-
-
-
-
-                GLCD_SetCursor(PH,x);
-                glcd_DataWrite(PointPos);
-
-            }
-        break;
-
-
-
-        case 2:
-
-            TRISE=0x03;
-            TRISC=0x07;
-            while(1){
-                ADCON1=0x0E;
-                ADCON0=0x01;
-                ADCON2=0xB1;
-
-                ADCON0=0x03;
-
-
-                if(ADCON0bits.GODONE!=0){
-                    valPot=(ADRESH*255)+(ADRESL);
+                if(ADCON0bits.GODONE==1){
+                    LDR=(ADRESH*255)+(ADRESL);
                 }
 
                 GLCD_SetCursor(0,0);
+                GLCD_Printf("LDR: %d",LDR);
+                tapas(LDR,5,0);
 
-                if(valPot!=0){
-                    GLCD_Printf("\nLuz: %d\n",valPot);
-                } else {
-                    GLCD_Printf("\nLuz: %1d\n",valPot);
-                }
-
-                for(int n=0; n<45;n++){
-                    GLCD_Printf(" ");
-                }
-                GLCD_SetCursor(2,0);
-
-                if(valPot>835){
-                    GLCD_Printf("\n-> No Hay Tapa!");
-                } else {
-                    if(valPot>810&&valPot<=835){
-                        GLCD_Printf("\nColor: Blanco");
-                    } else {
-                        if(valPot>790 && valPot<=810){
-                            GLCD_Printf("\nColor: Amarillo");
-                        } else {
-                            if(valPot>650 && valPot<=680){
-                                GLCD_Printf("\nColor: Azul Claro");
-                            } else {
-                                if(valPot>330 && valPot<=370){
-                                    GLCD_Printf("\nColor: Verde Oscuro");
-                                } else {
-                                    if(valPot>100 && valPot<=165){
-                                        GLCD_Printf("\nColor: Azul Oscuro");
-                                    } else {
-                                        GLCD_Printf("\n-> No Hay Protector!");
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-# 205 "main.c"
-            }
-        break;
+                ADCON0bits.ADON=0;
 
 
 
-        case 3:
-            TRISE=0x03;
-            TRISC=0x07;
-            while(1){
-                ADCON1=0x0E;
-                ADCON0=0x01;
-                ADCON2=0xB1;
+                pB=~pA;
+                PORTA=pB;
 
-                ADCON0=0x03;
 
-                if(ADCON0bits.GODONE!=0){
-                    valPot=(ADRESH*255)+(ADRESL);
-                }
 
-                temp=map(valPot,0,1023,300,1023);
-                GLCD_SetCursor(0,0);
-                GLCD_Printf("Temp: %d",temp);
 
-                setpoint=(PORTA>>1)+(PORTE<<5)+(PORTC<<7);
+
+                ayM=column();
+
+
+                xM=row(pA);
+                yM=(ayM-1);
+
+                cond=ayM;
 
                 GLCD_SetCursor(1,0);
-                if(setpoint<300){
-                    GLCD_Printf("Error de SetPoint");
-                } else {
-                    GLCD_Printf("SetPoint: %d",setpoint);
-                    GLCD_SetCursor(2,0);
-                    if(temp>setpoint){
-                        GLCD_Printf("Temperatura Elevada"); }
-                }
-        break;
-        }
+                GLCD_Printf("Code: ");
 
-        case 4:
-
-            TRISA=0x21;
+                if(ayM>0 && xSC<(sX+(nC*6))){
+                    GLCD_SetCursor(ySC,xSC);
+                    valM=comb[xM][yM];
+                    GLCD_Printf("%c",valM);
 
 
-            TRISE=0x07;
+                    ySC=1;
+                    xSC+=6;
 
 
-            TRISC=0xFF;
-
-            ADCON1=0x0E;
-            ADCON0=0x01;
-            ADCON2=0xB1;
+                    codTec[contChar-1]=valM;
 
 
+                    contChar++;
 
-            GLCD_Init();
-
-            int index=0;
-            uint8_t pA=0x02;
-            uint8_t pB;
-            uint8_t v1;
-
-            pA=0x02;
-            int xM,yM,ayM;
-            int xSC=0,ySC=3;
-            char valM;
-
-            long saldo;
-            while(1){
-                if(PORTCbits.RC0==0)
-                {
                     while(1){
-                        char codTec[4];
-
-                        long LDR;
-                        long LM35;
-
-
-                        ADCON0=0x01;
-                        ADCON2=0xB1;
-                        ADCON0bits.GODONE=1;
-
-                        if(ADCON0bits.GODONE==1){
-                            LDR=(ADRESH*255)+(ADRESL);
+                        ayM=column();
+                        if(cond!=ayM){
+                            break;
                         }
-
-                        GLCD_SetCursor(0,0);
-                        GLCD_Printf("LDR: %d",LDR);
-# 317 "main.c"
-                        int codColor=0;
-
-                        GLCD_SetCursor(5,0);
-                        if(LDR>748){
-                            GLCD_Printf("\n-> No Hay Tapa!");
-                            codColor=0;
-                        } else {
-                            if(LDR>715&&LDR<=730){
-                                GLCD_Printf("\nColor: Blanco");
-                                codColor=1;
-                                saldo+=10000;
-                            } else {
-                                if(LDR>680 && LDR<=710){
-                                    GLCD_Printf("\nColor: Amarillo");
-                                    codColor=2;
-                                    saldo+=5000;
-                                } else {
-                                    if(LDR>650 && LDR<=680){
-                                        GLCD_Printf("\nColor: Azul Claro");
-                                        codColor=3;
-                                        saldo+=2000;
-                                    } else {
-                                        if(LDR>330 && LDR<=370){
-                                            GLCD_Printf("\nColor: Verde Oscuro");
-                                            codColor=4;
-                                            saldo+=1000;
-                                        } else {
-                                            if(LDR>100 && LDR<=165){
-                                                GLCD_Printf("\nColor: Azul Oscuro");
-                                                codColor=5;
-                                                saldo+=500;
-                                            } else {
-                                                GLCD_Printf("\nSin Protector");
-                                                codColor=0;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        ADCON0bits.ADON=0;
-                        ADCON1=0x0F;
-
-                        TRISA=0x21;
-
-
-                        TRISE=0x07;
-
-
-
-
-                        pB=~pA;
-
-                        PORTA=pB;
-
-                        switch(pA){
-                            case 2:
-                                xM=0;
-                                break;
-                            case 4:
-                                xM=1;
-                                break;
-                            case 8:
-                                xM=2;
-                                break;
-                            case 16:
-                                xM=3;
-                                break;
-                        }
-
-                        if(PORTAbits.RA5==0){
-                            ayM=1;
-                        } else {
-                            if(PORTEbits.RE0==0){
-                                ayM=2;
-                            } else {
-                                if(PORTEbits.RE1==0){
-                                    ayM=3;
-                                } else {
-                                    if(PORTEbits.RE2==0){
-                                        ayM=4;
-                                    } else {
-                                        ayM=0;
-                                    }
-                                }
-                            }
-                        }
-
-                        yM=(ayM-1);
-
-                        char comb[4][4]={
-                            '1','2','3','A',
-                            '4','5','6','B',
-                            '7','8','9','C',
-                            '*','0','#','D'
-                        };
-
-                        int cont=1;
-                        int cond=ayM;
-
-                        for(int i=0;i<4;i++){
-                            GLCD_SetCursor(7,(i*6));
-                            GLCD_Printf(codTec[i]);
-                        }
-
-                        if(ayM>0){
-                            ySC=1;
-                            GLCD_SetCursor(ySC,xSC);
-                            valM=comb[xM][yM];
-                            GLCD_Printf("%c",valM);
-                            cont++;
-                            ayM=1;
-                            xSC+=6;
-
-                            if(cont<5){
-                                codTec[cont--]=valM;
-                                GLCD_Printf("\nCont: %d",cont);
-                            } else {
-                                cont=1;
-                            }
-
-                            if(xSC>18){
-                                ySC++;
-                                xSC=0;
-                                if(ySC>7){
-                                    ySC=3;
-                                }
-                            }
-                            while(1){
-                                if(PORTAbits.RA5==0){
-                                    ayM=1;
-                                } else {
-                                    if(PORTEbits.RE0==0){
-                                        ayM=2;
-                                    } else {
-                                        if(PORTEbits.RE1==0){
-                                            ayM=3;
-                                        } else {
-                                            if(PORTEbits.RE2==0){
-                                                ayM=4;
-                                            } else {
-                                                ayM=0;
-                                            }
-                                        }
-                                    }
-                                }
-
-                                if(cond!=ayM){
-                                    break;
-                                }
-                            }
-                        }
-
-
-                                pA=(pA<<1);
-
-                                index++;
-                                if(index>3){
-                                    index=0;
-                                    pA=0x02;
-                                }
-
-
-                                if(PORTCbits.RC0==1){
-                                    GLCD_Clear();
-                                    GLCD_SetCursor(0,0);
-                                    GLCD_Printf("OFF");
-                                    break;
-                                }
-
-
-
-                                if(PORTCbits.RC1==1){
-                                    GLCD_Clear();
-                                    _delay((unsigned long)((500)*(16000000/4000.0)));
-                                }
-
                     }
                 }
+                GLCD_SetCursor(2,0);
+                GLCD_Printf("Cont: %1d",contChar);
+                if(contChar>4){
+                    int c;
+                    char v;
+                    while(1){
+                        v=codTec[c];
+                        GLCD_SetCursor(3,0);
+                        GLCD_Printf("%c",v);
+                        c++;
+                        if(c>3){
+                            c=0;
+                        }
+                        _delay((unsigned long)((500)*(16000000/4000.0)));
+                    }
+                }
+
+
+
+
+                if(PORTCbits.RC0==1){
+                    GLCD_Clear();
+                    GLCD_SetCursor(0,0);
+                    GLCD_Printf("OFF");
+                    break;
+                }
+
+                if(PORTCbits.RC1==1){
+                    reset();
+                }
+
+                pA=(pA<<1);
+
+                index++;
+                if(index>3){
+                    index=0;
+                    pA=0x02;
+                }
+
             }
-        break;
+        }
     }
+}
+
+
+void reset(){
+
+    for(int i=sX; i<(sX+(nC*6));i+=(nC*6)){
+        GLCD_SetCursor(sY,i);
+        GLCD_Printf(" ");
+    }
+    _delay((unsigned long)((500)*(16000000/4000.0)));
 }
 
 long map(long x, long in_m, long in_M, long out_m, long out_M){
     return (x-in_m)*(out_M-out_m)/(in_M-in_m)+out_m;
+}
+
+void tapas(long val, int y, int x){
+    GLCD_SetCursor(y,x);
+    if(val>748){
+        GLCD_Printf("\n-> No Hay Tapa!");
+        codColor=0;
+    } else {
+        if(val>715&&val<=730){
+            GLCD_Printf("\nColor: Blanco");
+            codColor=1;
+            saldo+=10000;
+        } else {
+            if(val>680 && val<=710){
+                GLCD_Printf("\nColor: Amarillo");
+                codColor=2;
+                saldo+=5000;
+            } else {
+                if(val>650 && val<=680){
+                    GLCD_Printf("\nColor: Azul Claro");
+                    codColor=3;
+                    saldo+=2000;
+                } else {
+                    if(val>330 && val<=370){
+                        GLCD_Printf("\nColor: Verde Oscuro");
+                        codColor=4;
+                        saldo+=1000;
+                    } else {
+                        if(val>100 && val<=165){
+                            GLCD_Printf("\nColor: Azul Oscuro");
+                            codColor=5;
+                            saldo+=500;
+                        } else {
+                            GLCD_Printf("\nSin Protector");
+                            codColor=0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+int row(int portA){
+    switch(portA){
+        case 2:
+            return 0;
+            break;
+        case 4:
+            return 1;
+            break;
+        case 8:
+            return 2;
+            break;
+        case 16:
+            return 3;
+            break;
+    }
+}
+
+int column(){
+    if(PORTAbits.RA5==0){
+        return 1;
+    } else {
+        if(PORTEbits.RE0==0){
+            return 2;
+        } else {
+            if(PORTEbits.RE1==0){
+                return 3;
+            } else {
+                if(PORTEbits.RE2==0){
+                    return 4;
+                } else {
+                    return 0;
+                }
+            }
+        }
+    }
 }

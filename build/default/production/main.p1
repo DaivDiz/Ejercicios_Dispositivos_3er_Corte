@@ -1,18 +1,15 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"4223 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+"3427 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3427: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"4223
 [; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 4223: extern volatile unsigned char TRISE __attribute__((address(0xF96)));
 [v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
 "3847
 [; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3847: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
 [v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
-"147 ./glcd.h
-[; ;./glcd.h: 147: void GLCD_SetCursor(uint8_t lineNumber,uint8_t CursorPosition);
-[v _GLCD_SetCursor `(v ~T0 @X0 0 ef2`uc`uc ]
-"155
-[; ;./glcd.h: 155: void glcd_DataWrite(uint8_t dat);
-[v _glcd_DataWrite `(v ~T0 @X0 0 ef1`uc ]
-"6581 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+"6581
 [; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6581: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
 "6666
@@ -21,6 +18,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6510
 [; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6510: extern volatile unsigned char ADCON2 __attribute__((address(0xFC0)));
 [v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
+"136 ./glcd.h
+[; ;./glcd.h: 136: void GLCD_Init(void);
+[v _GLCD_Init `(v ~T0 @X0 0 ef ]
+"2569 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2569:     struct {
+[s S106 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S106 . RC0 RC1 RC2 . RC4 RC5 RC6 RC7 ]
+"2579
+[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2579:     struct {
+[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S107 . T1OSO T1OSI CCP1 . TX RX ]
+"2587
+[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2587:     struct {
+[s S108 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S108 . T13CKI . P1A . CK DT ]
+"2595
+[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2595:     struct {
+[s S109 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S109 . . CCP2 PA1 ]
+"2600
+[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2600:     struct {
+[s S110 :1 `uc 1 :1 `uc 1 ]
+[n S110 . . PA2 ]
+"2568
+[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2568: typedef union {
+[u S105 `S106 1 `S107 1 `S108 1 `S109 1 `S110 1 ]
+[n S105 . . . . . . ]
+"2605
+[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2605: extern volatile PORTCbits_t PORTCbits __attribute__((address(0xF82)));
+[v _PORTCbits `VS105 ~T0 @X0 0 e@3970 ]
 "6672
 [; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6672:     struct {
 [s S268 :1 `uc 1 :1 `uc 1 ]
@@ -66,59 +93,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6792
 [; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 6792: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
-"2314
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2314: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
-[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
-"2826
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2826: extern volatile unsigned char PORTE __attribute__((address(0xF84)));
-[v _PORTE `Vuc ~T0 @X0 0 e@3972 ]
-"2563
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2563: extern volatile unsigned char PORTC __attribute__((address(0xF82)));
-[v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
-[v F3820 `(f ~T0 @X0 1 tf2`f`f ]
-"319 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\math.h
-[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\math.h: 319: __attribute__((nonreentrant)) float powf(float, float);
-[v _powf `JF3820 ~T0 @X0 0 e ]
-"142 ./glcd.h
+"147 ./glcd.h
+[; ;./glcd.h: 147: void GLCD_SetCursor(uint8_t lineNumber,uint8_t CursorPosition);
+[v _GLCD_SetCursor `(v ~T0 @X0 0 ef2`uc`uc ]
+"142
 [; ;./glcd.h: 142: void GLCD_Printf(const char *argList, ...);
 [v _GLCD_Printf `(v ~T0 @X0 0 ev`*Cuc ]
-"37 main.c
-[; ;main.c: 37: long map();
-[v _map `(l ~T0 @X0 0 e? ]
-"3427 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3427: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"136 ./glcd.h
-[; ;./glcd.h: 136: void GLCD_Init(void);
-[v _GLCD_Init `(v ~T0 @X0 0 ef ]
-"2569 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2569:     struct {
-[s S106 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S106 . RC0 RC1 RC2 . RC4 RC5 RC6 RC7 ]
-"2579
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2579:     struct {
-[s S107 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S107 . T1OSO T1OSI CCP1 . TX RX ]
-"2587
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2587:     struct {
-[s S108 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S108 . T13CKI . P1A . CK DT ]
-"2595
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2595:     struct {
-[s S109 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S109 . . CCP2 PA1 ]
-"2600
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2600:     struct {
-[s S110 :1 `uc 1 :1 `uc 1 ]
-[n S110 . . PA2 ]
-"2568
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2568: typedef union {
-[u S105 `S106 1 `S107 1 `S108 1 `S109 1 `S110 1 ]
-[n S105 . . . . . . ]
-"2605
-[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2605: extern volatile PORTCbits_t PORTCbits __attribute__((address(0xF82)));
-[v _PORTCbits `VS105 ~T0 @X0 0 e@3970 ]
-"2320
+"21 main.c
+[; ;main.c: 21: void tapas(),reset();
+[v _tapas `(v ~T0 @X0 0 e? ]
+"2314 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2314: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
+[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
+"22 main.c
+[; ;main.c: 22: int column(),row();
+[v _column `(i ~T0 @X0 0 e? ]
+[v _row `(i ~T0 @X0 0 e? ]
+[v F3152 `(v ~T0 @X0 1 tf1`ul ]
+"203 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
+[v __delay `JF3152 ~T0 @X0 0 e ]
+[p i __delay ]
+"143 ./glcd.h
+[; ;./glcd.h: 143: void GLCD_Clear(void);
+[v _GLCD_Clear `(v ~T0 @X0 0 ef ]
+"21 main.c
+[; ;main.c: 21: void tapas(),reset();
+[v _reset `(v ~T0 @X0 0 e? ]
+"2320 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2320:     struct {
 [s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S96 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 ]
@@ -172,13 +173,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2868
 [; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2868: extern volatile PORTEbits_t PORTEbits __attribute__((address(0xF84)));
 [v _PORTEbits `VS115 ~T0 @X0 0 e@3972 ]
-"143 ./glcd.h
-[; ;./glcd.h: 143: void GLCD_Clear(void);
-[v _GLCD_Clear `(v ~T0 @X0 0 ef ]
-[v F3152 `(v ~T0 @X0 1 tf1`ul ]
-"203 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\pic18.h
-[v __delay `JF3152 ~T0 @X0 0 e ]
-[p i __delay ]
 "54 C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -698,981 +692,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12
 [p x MCLRE  =  ON   STVREN  =  OFF   LVP  =  OFF ]
 "25
-[; ;main.c: 25: long valPot;
-[v _valPot `l ~T0 @X0 1 e ]
+[; ;main.c: 25: uint8_t pA=0x02;
+[v _pA `uc ~T0 @X0 1 e ]
+[i _pA
+-> -> 2 `i `uc
+]
+"26
+[; ;main.c: 26: uint8_t pB;
+[v _pB `uc ~T0 @X0 1 e ]
+"27
+[; ;main.c: 27: uint8_t v1;
+[v _v1 `uc ~T0 @X0 1 e ]
 "28
-[; ;main.c: 28: int setpoint;
-[v _setpoint `i ~T0 @X0 1 e ]
-"29
-[; ;main.c: 29: int min=0,max=1023;
-[v _min `i ~T0 @X0 1 e ]
-[i _min
+[; ;main.c: 28: int index=0;
+[v _index `i ~T0 @X0 1 e ]
+[i _index
 -> 0 `i
 ]
-[v _max `i ~T0 @X0 1 e ]
-[i _max
--> 1023 `i
-]
-"30
-[; ;main.c: 30: int secc=8;
-[v _secc `i ~T0 @X0 1 e ]
-[i _secc
--> 8 `i
-]
 "31
-[; ;main.c: 31: int val;
-[v _val `i ~T0 @X0 1 e ]
-"33
-[; ;main.c: 33: long temp;
-[v _temp `l ~T0 @X0 1 e ]
-"36
-[; ;main.c: 36: int opc=4;
-[v _opc `i ~T0 @X0 1 e ]
-[i _opc
--> 4 `i
-]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"40
-[; ;main.c: 40: void main()
-[v _main `(v ~T0 @X0 1 ef ]
-"41
-[; ;main.c: 41: {
-{
-[e :U _main ]
-[f ]
-"42
-[; ;main.c: 42:     switch(opc){
-[e $U 372  ]
-{
-"44
-[; ;main.c: 44:         case 1:
-[e :U 373 ]
-"46
-[; ;main.c: 46:             TRISE=0x03;
-[e = _TRISE -> -> 3 `i `uc ]
-"47
-[; ;main.c: 47:             TRISC=0x07;
-[e = _TRISC -> -> 7 `i `uc ]
-"49
-[; ;main.c: 49:             int xStart=15;
-[v _xStart `i ~T0 @X0 1 a ]
-[e = _xStart -> 15 `i ]
-"50
-[; ;main.c: 50:             int x=xStart;
-[v _x `i ~T0 @X0 1 a ]
-[e = _x _xStart ]
-"52
-[; ;main.c: 52:             for(int i=1;i<128;i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 1 `i ]
-[e $ < _i -> 128 `i 374  ]
-[e $U 375  ]
-[e :U 374 ]
-{
-"53
-[; ;main.c: 53:                 GLCD_SetCursor(7,i);
-[e ( _GLCD_SetCursor (2 , -> -> 7 `i `uc -> _i `uc ]
-"54
-[; ;main.c: 54:                 if(i%10==0){
-[e $ ! == % _i -> 10 `i -> 0 `i 377  ]
-{
-"55
-[; ;main.c: 55:                     glcd_DataWrite(0xC0);
-[e ( _glcd_DataWrite (1 -> -> 192 `i `uc ]
-"56
-[; ;main.c: 56:                 }else{
-}
-[e $U 378  ]
-[e :U 377 ]
-{
-"57
-[; ;main.c: 57:                     glcd_DataWrite(0x80);
-[e ( _glcd_DataWrite (1 -> -> 128 `i `uc ]
-"58
-[; ;main.c: 58:                 }
-}
-[e :U 378 ]
-"59
-[; ;main.c: 59:             }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 128 `i 374  ]
-[e :U 375 ]
-}
-"61
-[; ;main.c: 61:             int P,PH,PL,den,maxF;
-[v _P `i ~T0 @X0 1 a ]
-[v _PH `i ~T0 @X0 1 a ]
-[v _PL `i ~T0 @X0 1 a ]
-[v _den `i ~T0 @X0 1 a ]
-[v _maxF `i ~T0 @X0 1 a ]
-"62
-[; ;main.c: 62:             while(1){
-[e :U 380 ]
-{
-"64
-[; ;main.c: 64:                 for(int j=7;j>-1;j--){
-{
-[v _j `i ~T0 @X0 1 a ]
-[e = _j -> 7 `i ]
-[e $ > _j -U -> 1 `i 382  ]
-[e $U 383  ]
-[e :U 382 ]
-{
-"65
-[; ;main.c: 65:                     GLCD_SetCursor(j,0);
-[e ( _GLCD_SetCursor (2 , -> _j `uc -> -> 0 `i `uc ]
-"66
-[; ;main.c: 66:                     if(j%2==0){
-[e $ ! == % _j -> 2 `i -> 0 `i 385  ]
-{
-"67
-[; ;main.c: 67:                         glcd_DataWrite(0xFF);
-[e ( _glcd_DataWrite (1 -> -> 255 `i `uc ]
-"68
-[; ;main.c: 68:                         GLCD_SetCursor(j,1);
-[e ( _GLCD_SetCursor (2 , -> _j `uc -> -> 1 `i `uc ]
-"69
-[; ;main.c: 69:                         glcd_DataWrite(0x01);
-[e ( _glcd_DataWrite (1 -> -> 1 `i `uc ]
-"70
-[; ;main.c: 70:                     } else {
-}
-[e $U 386  ]
-[e :U 385 ]
-{
-"71
-[; ;main.c: 71:                         glcd_DataWrite(0xFF);
-[e ( _glcd_DataWrite (1 -> -> 255 `i `uc ]
-"72
-[; ;main.c: 72:                     }
-}
-[e :U 386 ]
-"73
-[; ;main.c: 73:                 }
-}
-[e -- _j -> 1 `i ]
-[e $ > _j -U -> 1 `i 382  ]
-[e :U 383 ]
-}
-"77
-[; ;main.c: 77:                 ADCON1=0x0E;
-[e = _ADCON1 -> -> 14 `i `uc ]
-"78
-[; ;main.c: 78:                 ADCON0=0x01;
-[e = _ADCON0 -> -> 1 `i `uc ]
-"79
-[; ;main.c: 79:                 ADCON2=0xB1;
-[e = _ADCON2 -> -> 177 `i `uc ]
-"81
-[; ;main.c: 81:                 ADCON0=0x03;
-[e = _ADCON0 -> -> 3 `i `uc ]
-"84
-[; ;main.c: 84:                 if(ADCON0bits.GODONE!=0){
-[e $ ! != -> . . _ADCON0bits 7 1 `i -> 0 `i 387  ]
-{
-"85
-[; ;main.c: 85:                     valPot=(ADRESH*255)+(ADRESL);
-[e = _valPot -> + * -> _ADRESH `i -> 255 `i -> _ADRESL `i `l ]
-"86
-[; ;main.c: 86:                     if(valPot>max){
-[e $ ! > _valPot -> _max `l 388  ]
-{
-"87
-[; ;main.c: 87:                         valPot=max;
-[e = _valPot -> _max `l ]
-"88
-[; ;main.c: 88:                     }
-}
-[e :U 388 ]
-"93
-[; ;main.c: 93:                 }
-}
-[e :U 387 ]
-"95
-[; ;main.c: 95:                 setpoint=(PORTA>>1)+(PORTE<<5)+(PORTC<<7);
-[e = _setpoint + + >> -> _PORTA `i -> 1 `i << -> _PORTE `i -> 5 `i << -> _PORTC `i -> 7 `i ]
-"97
-[; ;main.c: 97:                 for(int i=0;i<128;i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 128 `i 389  ]
-[e $U 390  ]
-[e :U 389 ]
-{
-"98
-[; ;main.c: 98:                     int F=setpoint/160;
-[v _F `i ~T0 @X0 1 a ]
-[e = _F / _setpoint -> 160 `i ]
-"99
-[; ;main.c: 99:                     GLCD_SetCursor(F,i);
-[e ( _GLCD_SetCursor (2 , -> _F `uc -> _i `uc ]
-"100
-[; ;main.c: 100:                     glcd_DataWrite(0x80);
-[e ( _glcd_DataWrite (1 -> -> 128 `i `uc ]
-"101
-[; ;main.c: 101:                 }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 128 `i 389  ]
-[e :U 390 ]
-}
-"104
-[; ;main.c: 104:                 val=(max/secc);
-[e = _val / _max _secc ]
-"106
-[; ;main.c: 106:                 x++;
-[e ++ _x -> 1 `i ]
-"108
-[; ;main.c: 108:                 if(x>128){
-[e $ ! > _x -> 128 `i 392  ]
-{
-"109
-[; ;main.c: 109:                     x=xStart;
-[e = _x _xStart ]
-"110
-[; ;main.c: 110:                 }
-}
-[e :U 392 ]
-"112
-[; ;main.c: 112:                 den=(max/64);
-[e = _den / _max -> 64 `i ]
-"114
-[; ;main.c: 114:                 PL=(valPot/den);
-[e = _PL -> / _valPot -> _den `l `i ]
-"116
-[; ;main.c: 116:                 PH=((PL*secc)/63);
-[e = _PH / * _PL _secc -> 63 `i ]
-"118
-[; ;main.c: 118:                 maxF=6;
-[e = _maxF -> 6 `i ]
-"120
-[; ;main.c: 120:                 if(PH>maxF){
-[e $ ! > _PH _maxF 393  ]
-{
-"121
-[; ;main.c: 121:                     PH=maxF;
-[e = _PH _maxF ]
-"122
-[; ;main.c: 122:                 }
-}
-[e :U 393 ]
-"124
-[; ;main.c: 124:                 P=(valPot%secc);
-[e = _P -> % _valPot -> _secc `l `i ]
-"126
-[; ;main.c: 126:                 uint8_t PointPos=powf(2,P);
-[v _PointPos `uc ~T0 @X0 1 a ]
-[e = _PointPos -> ( _powf (2 , -> -> 2 `i `f -> _P `f `uc ]
-"134
-[; ;main.c: 134:                 GLCD_SetCursor(PH,x);
-[e ( _GLCD_SetCursor (2 , -> _PH `uc -> _x `uc ]
-"135
-[; ;main.c: 135:                 glcd_DataWrite(PointPos);
-[e ( _glcd_DataWrite (1 _PointPos ]
-"137
-[; ;main.c: 137:             }
-}
-[e :U 379 ]
-[e $U 380  ]
-[e :U 381 ]
-"138
-[; ;main.c: 138:         break;
-[e $U 371  ]
-"142
-[; ;main.c: 142:         case 2:
-[e :U 394 ]
-"144
-[; ;main.c: 144:             TRISE=0x03;
-[e = _TRISE -> -> 3 `i `uc ]
-"145
-[; ;main.c: 145:             TRISC=0x07;
-[e = _TRISC -> -> 7 `i `uc ]
-"146
-[; ;main.c: 146:             while(1){
-[e :U 396 ]
-{
-"147
-[; ;main.c: 147:                 ADCON1=0x0E;
-[e = _ADCON1 -> -> 14 `i `uc ]
-"148
-[; ;main.c: 148:                 ADCON0=0x01;
-[e = _ADCON0 -> -> 1 `i `uc ]
-"149
-[; ;main.c: 149:                 ADCON2=0xB1;
-[e = _ADCON2 -> -> 177 `i `uc ]
-"151
-[; ;main.c: 151:                 ADCON0=0x03;
-[e = _ADCON0 -> -> 3 `i `uc ]
-"154
-[; ;main.c: 154:                 if(ADCON0bits.GODONE!=0){
-[e $ ! != -> . . _ADCON0bits 7 1 `i -> 0 `i 398  ]
-{
-"155
-[; ;main.c: 155:                     valPot=(ADRESH*255)+(ADRESL);
-[e = _valPot -> + * -> _ADRESH `i -> 255 `i -> _ADRESL `i `l ]
-"156
-[; ;main.c: 156:                 }
-}
-[e :U 398 ]
-"158
-[; ;main.c: 158:                 GLCD_SetCursor(0,0);
-[e ( _GLCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"160
-[; ;main.c: 160:                 if(valPot!=0){
-[e $ ! != _valPot -> -> 0 `i `l 399  ]
-{
-"161
-[; ;main.c: 161:                     GLCD_Printf("\nLuz: %d\n",valPot);
-[e ( _GLCD_Printf , (. :s 1C _valPot ]
-"162
-[; ;main.c: 162:                 } else {
-}
-[e $U 400  ]
-[e :U 399 ]
-{
-"163
-[; ;main.c: 163:                     GLCD_Printf("\nLuz: %1d\n",valPot);
-[e ( _GLCD_Printf , (. :s 2C _valPot ]
-"164
-[; ;main.c: 164:                 }
-}
-[e :U 400 ]
-"166
-[; ;main.c: 166:                 for(int n=0; n<45;n++){
-{
-[v _n `i ~T0 @X0 1 a ]
-[e = _n -> 0 `i ]
-[e $ < _n -> 45 `i 401  ]
-[e $U 402  ]
-[e :U 401 ]
-{
-"167
-[; ;main.c: 167:                     GLCD_Printf(" ");
-[e ( _GLCD_Printf :s 3C ]
-"168
-[; ;main.c: 168:                 }
-}
-[e ++ _n -> 1 `i ]
-[e $ < _n -> 45 `i 401  ]
-[e :U 402 ]
-}
-"169
-[; ;main.c: 169:                 GLCD_SetCursor(2,0);
-[e ( _GLCD_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"171
-[; ;main.c: 171:                 if(valPot>835){
-[e $ ! > _valPot -> -> 835 `i `l 404  ]
-{
-"172
-[; ;main.c: 172:                     GLCD_Printf("\n-> No Hay Tapa!");
-[e ( _GLCD_Printf :s 4C ]
-"173
-[; ;main.c: 173:                 } else {
-}
-[e $U 405  ]
-[e :U 404 ]
-{
-"174
-[; ;main.c: 174:                     if(valPot>810&&valPot<=835){
-[e $ ! && > _valPot -> -> 810 `i `l <= _valPot -> -> 835 `i `l 406  ]
-{
-"175
-[; ;main.c: 175:                         GLCD_Printf("\nColor: Blanco");
-[e ( _GLCD_Printf :s 5C ]
-"176
-[; ;main.c: 176:                     } else {
-}
-[e $U 407  ]
-[e :U 406 ]
-{
-"177
-[; ;main.c: 177:                         if(valPot>790 && valPot<=810){
-[e $ ! && > _valPot -> -> 790 `i `l <= _valPot -> -> 810 `i `l 408  ]
-{
-"178
-[; ;main.c: 178:                             GLCD_Printf("\nColor: Amarillo");
-[e ( _GLCD_Printf :s 6C ]
-"179
-[; ;main.c: 179:                         } else {
-}
-[e $U 409  ]
-[e :U 408 ]
-{
-"180
-[; ;main.c: 180:                             if(valPot>650 && valPot<=680){
-[e $ ! && > _valPot -> -> 650 `i `l <= _valPot -> -> 680 `i `l 410  ]
-{
-"181
-[; ;main.c: 181:                                 GLCD_Printf("\nColor: Azul Claro");
-[e ( _GLCD_Printf :s 7C ]
-"182
-[; ;main.c: 182:                             } else {
-}
-[e $U 411  ]
-[e :U 410 ]
-{
-"183
-[; ;main.c: 183:                                 if(valPot>330 && valPot<=370){
-[e $ ! && > _valPot -> -> 330 `i `l <= _valPot -> -> 370 `i `l 412  ]
-{
-"184
-[; ;main.c: 184:                                     GLCD_Printf("\nColor: Verde Oscuro");
-[e ( _GLCD_Printf :s 8C ]
-"185
-[; ;main.c: 185:                                 } else {
-}
-[e $U 413  ]
-[e :U 412 ]
-{
-"186
-[; ;main.c: 186:                                     if(valPot>100 && valPot<=165){
-[e $ ! && > _valPot -> -> 100 `i `l <= _valPot -> -> 165 `i `l 414  ]
-{
-"187
-[; ;main.c: 187:                                         GLCD_Printf("\nColor: Azul Oscuro");
-[e ( _GLCD_Printf :s 9C ]
-"188
-[; ;main.c: 188:                                     } else {
-}
-[e $U 415  ]
-[e :U 414 ]
-{
-"189
-[; ;main.c: 189:                                         GLCD_Printf("\n-> No Hay Protector!");
-[e ( _GLCD_Printf :s 10C ]
-"190
-[; ;main.c: 190:                                     }
-}
-[e :U 415 ]
-"191
-[; ;main.c: 191:                                 }
-}
-[e :U 413 ]
-"192
-[; ;main.c: 192:                             }
-}
-[e :U 411 ]
-"193
-[; ;main.c: 193:                         }
-}
-[e :U 409 ]
-"194
-[; ;main.c: 194:                     }
-}
-[e :U 407 ]
-"195
-[; ;main.c: 195:                 }
-}
-[e :U 405 ]
-"205
-[; ;main.c: 205:             }
-}
-[e :U 395 ]
-[e $U 396  ]
-[e :U 397 ]
-"206
-[; ;main.c: 206:         break;
-[e $U 371  ]
-"210
-[; ;main.c: 210:         case 3:
-[e :U 416 ]
-"211
-[; ;main.c: 211:             TRISE=0x03;
-[e = _TRISE -> -> 3 `i `uc ]
-"212
-[; ;main.c: 212:             TRISC=0x07;
-[e = _TRISC -> -> 7 `i `uc ]
-"213
-[; ;main.c: 213:             while(1){
-[e :U 418 ]
-{
-"214
-[; ;main.c: 214:                 ADCON1=0x0E;
-[e = _ADCON1 -> -> 14 `i `uc ]
-"215
-[; ;main.c: 215:                 ADCON0=0x01;
-[e = _ADCON0 -> -> 1 `i `uc ]
-"216
-[; ;main.c: 216:                 ADCON2=0xB1;
-[e = _ADCON2 -> -> 177 `i `uc ]
-"218
-[; ;main.c: 218:                 ADCON0=0x03;
-[e = _ADCON0 -> -> 3 `i `uc ]
-"220
-[; ;main.c: 220:                 if(ADCON0bits.GODONE!=0){
-[e $ ! != -> . . _ADCON0bits 7 1 `i -> 0 `i 420  ]
-{
-"221
-[; ;main.c: 221:                     valPot=(ADRESH*255)+(ADRESL);
-[e = _valPot -> + * -> _ADRESH `i -> 255 `i -> _ADRESL `i `l ]
-"222
-[; ;main.c: 222:                 }
-}
-[e :U 420 ]
-"224
-[; ;main.c: 224:                 temp=map(valPot,0,1023,300,1023);
-[e = _temp ( _map , , , , _valPot -> 0 `i -> 1023 `i -> 300 `i -> 1023 `i ]
-"225
-[; ;main.c: 225:                 GLCD_SetCursor(0,0);
-[e ( _GLCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"226
-[; ;main.c: 226:                 GLCD_Printf("Temp: %d",temp);
-[e ( _GLCD_Printf , (. :s 11C _temp ]
-"228
-[; ;main.c: 228:                 setpoint=(PORTA>>1)+(PORTE<<5)+(PORTC<<7);
-[e = _setpoint + + >> -> _PORTA `i -> 1 `i << -> _PORTE `i -> 5 `i << -> _PORTC `i -> 7 `i ]
-"230
-[; ;main.c: 230:                 GLCD_SetCursor(1,0);
-[e ( _GLCD_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"231
-[; ;main.c: 231:                 if(setpoint<300){
-[e $ ! < _setpoint -> 300 `i 421  ]
-{
-"232
-[; ;main.c: 232:                     GLCD_Printf("Error de SetPoint");
-[e ( _GLCD_Printf :s 12C ]
-"233
-[; ;main.c: 233:                 } else {
-}
-[e $U 422  ]
-[e :U 421 ]
-{
-"234
-[; ;main.c: 234:                     GLCD_Printf("SetPoint: %d",setpoint);
-[e ( _GLCD_Printf , (. :s 13C _setpoint ]
-"235
-[; ;main.c: 235:                     GLCD_SetCursor(2,0);
-[e ( _GLCD_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-"236
-[; ;main.c: 236:                     if(temp>setpoint){
-[e $ ! > _temp -> _setpoint `l 423  ]
-{
-"237
-[; ;main.c: 237:                         GLCD_Printf("Temperatura Elevada"); }
-[e ( _GLCD_Printf :s 14C ]
-}
-[e :U 423 ]
-"238
-[; ;main.c: 238:                 }
-}
-[e :U 422 ]
-"239
-[; ;main.c: 239:         break;
-[e $U 419  ]
-"240
-[; ;main.c: 240:         }
-}
-[e :U 417 ]
-[e $U 418  ]
-[e :U 419 ]
-"242
-[; ;main.c: 242:         case 4:
-[e :U 424 ]
-"244
-[; ;main.c: 244:             TRISA=0x21;
-[e = _TRISA -> -> 33 `i `uc ]
-"247
-[; ;main.c: 247:             TRISE=0x07;
-[e = _TRISE -> -> 7 `i `uc ]
-"250
-[; ;main.c: 250:             TRISC=0xFF;
-[e = _TRISC -> -> 255 `i `uc ]
-"252
-[; ;main.c: 252:             ADCON1=0x0E;
-[e = _ADCON1 -> -> 14 `i `uc ]
-"253
-[; ;main.c: 253:             ADCON0=0x01;
-[e = _ADCON0 -> -> 1 `i `uc ]
-"254
-[; ;main.c: 254:             ADCON2=0xB1;
-[e = _ADCON2 -> -> 177 `i `uc ]
-"258
-[; ;main.c: 258:             GLCD_Init();
-[e ( _GLCD_Init ..  ]
-"260
-[; ;main.c: 260:             int index=0;
-[v _index `i ~T0 @X0 1 a ]
-[e = _index -> 0 `i ]
-"261
-[; ;main.c: 261:             uint8_t pA=0x02;
-[v _pA `uc ~T0 @X0 1 a ]
-[e = _pA -> -> 2 `i `uc ]
-"262
-[; ;main.c: 262:             uint8_t pB;
-[v _pB `uc ~T0 @X0 1 a ]
-"263
-[; ;main.c: 263:             uint8_t v1;
-[v _v1 `uc ~T0 @X0 1 a ]
-"265
-[; ;main.c: 265:             pA=0x02;
-[e = _pA -> -> 2 `i `uc ]
-"266
-[; ;main.c: 266:             int xM,yM,ayM;
-[v _xM `i ~T0 @X0 1 a ]
-[v _yM `i ~T0 @X0 1 a ]
-[v _ayM `i ~T0 @X0 1 a ]
-"267
-[; ;main.c: 267:             int xSC=0,ySC=3;
-[v _xSC `i ~T0 @X0 1 a ]
-[e = _xSC -> 0 `i ]
-[v _ySC `i ~T0 @X0 1 a ]
-[e = _ySC -> 3 `i ]
-"268
-[; ;main.c: 268:             char valM;
-[v _valM `uc ~T0 @X0 1 a ]
-"270
-[; ;main.c: 270:             long saldo;
-[v _saldo `l ~T0 @X0 1 a ]
-"271
-[; ;main.c: 271:             while(1){
-[e :U 426 ]
-{
-"272
-[; ;main.c: 272:                 if(PORTCbits.RC0==0)
-[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 428  ]
-"273
-[; ;main.c: 273:                 {
-{
-"274
-[; ;main.c: 274:                     while(1){
-[e :U 430 ]
-{
-"275
-[; ;main.c: 275:                         char codTec[4];
-[v _codTec `uc ~T0 @X0 -> 4 `i a ]
-"277
-[; ;main.c: 277:                         long LDR;
-[v _LDR `l ~T0 @X0 1 a ]
-"278
-[; ;main.c: 278:                         long LM35;
-[v _LM35 `l ~T0 @X0 1 a ]
-"281
-[; ;main.c: 281:                         ADCON0=0x01;
-[e = _ADCON0 -> -> 1 `i `uc ]
-"282
-[; ;main.c: 282:                         ADCON2=0xB1;
-[e = _ADCON2 -> -> 177 `i `uc ]
-"283
-[; ;main.c: 283:                         ADCON0bits.GODONE=1;
-[e = . . _ADCON0bits 7 1 -> -> 1 `i `uc ]
-"285
-[; ;main.c: 285:                         if(ADCON0bits.GODONE==1){
-[e $ ! == -> . . _ADCON0bits 7 1 `i -> 1 `i 432  ]
-{
-"286
-[; ;main.c: 286:                             LDR=(ADRESH*255)+(ADRESL);
-[e = _LDR -> + * -> _ADRESH `i -> 255 `i -> _ADRESL `i `l ]
-"287
-[; ;main.c: 287:                         }
-}
-[e :U 432 ]
-"289
-[; ;main.c: 289:                         GLCD_SetCursor(0,0);
-[e ( _GLCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"290
-[; ;main.c: 290:                         GLCD_Printf("LDR: %d",LDR);
-[e ( _GLCD_Printf , (. :s 15C _LDR ]
-"317
-[; ;main.c: 317:                         int codColor=0;
-[v _codColor `i ~T0 @X0 1 a ]
-[e = _codColor -> 0 `i ]
-"319
-[; ;main.c: 319:                         GLCD_SetCursor(5,0);
-[e ( _GLCD_SetCursor (2 , -> -> 5 `i `uc -> -> 0 `i `uc ]
-"320
-[; ;main.c: 320:                         if(LDR>748){
-[e $ ! > _LDR -> -> 748 `i `l 433  ]
-{
-"321
-[; ;main.c: 321:                             GLCD_Printf("\n-> No Hay Tapa!");
-[e ( _GLCD_Printf :s 16C ]
-"322
-[; ;main.c: 322:                             codColor=0;
-[e = _codColor -> 0 `i ]
-"323
-[; ;main.c: 323:                         } else {
-}
-[e $U 434  ]
-[e :U 433 ]
-{
-"324
-[; ;main.c: 324:                             if(LDR>715&&LDR<=730){
-[e $ ! && > _LDR -> -> 715 `i `l <= _LDR -> -> 730 `i `l 435  ]
-{
-"325
-[; ;main.c: 325:                                 GLCD_Printf("\nColor: Blanco");
-[e ( _GLCD_Printf :s 17C ]
-"326
-[; ;main.c: 326:                                 codColor=1;
-[e = _codColor -> 1 `i ]
-"327
-[; ;main.c: 327:                                 saldo+=10000;
-[e =+ _saldo -> -> 10000 `i `l ]
-"328
-[; ;main.c: 328:                             } else {
-}
-[e $U 436  ]
-[e :U 435 ]
-{
-"329
-[; ;main.c: 329:                                 if(LDR>680 && LDR<=710){
-[e $ ! && > _LDR -> -> 680 `i `l <= _LDR -> -> 710 `i `l 437  ]
-{
-"330
-[; ;main.c: 330:                                     GLCD_Printf("\nColor: Amarillo");
-[e ( _GLCD_Printf :s 18C ]
-"331
-[; ;main.c: 331:                                     codColor=2;
-[e = _codColor -> 2 `i ]
-"332
-[; ;main.c: 332:                                     saldo+=5000;
-[e =+ _saldo -> -> 5000 `i `l ]
-"333
-[; ;main.c: 333:                                 } else {
-}
-[e $U 438  ]
-[e :U 437 ]
-{
-"334
-[; ;main.c: 334:                                     if(LDR>650 && LDR<=680){
-[e $ ! && > _LDR -> -> 650 `i `l <= _LDR -> -> 680 `i `l 439  ]
-{
-"335
-[; ;main.c: 335:                                         GLCD_Printf("\nColor: Azul Claro");
-[e ( _GLCD_Printf :s 19C ]
-"336
-[; ;main.c: 336:                                         codColor=3;
-[e = _codColor -> 3 `i ]
-"337
-[; ;main.c: 337:                                         saldo+=2000;
-[e =+ _saldo -> -> 2000 `i `l ]
-"338
-[; ;main.c: 338:                                     } else {
-}
-[e $U 440  ]
-[e :U 439 ]
-{
-"339
-[; ;main.c: 339:                                         if(LDR>330 && LDR<=370){
-[e $ ! && > _LDR -> -> 330 `i `l <= _LDR -> -> 370 `i `l 441  ]
-{
-"340
-[; ;main.c: 340:                                             GLCD_Printf("\nColor: Verde Oscuro");
-[e ( _GLCD_Printf :s 20C ]
-"341
-[; ;main.c: 341:                                             codColor=4;
-[e = _codColor -> 4 `i ]
-"342
-[; ;main.c: 342:                                             saldo+=1000;
-[e =+ _saldo -> -> 1000 `i `l ]
-"343
-[; ;main.c: 343:                                         } else {
-}
-[e $U 442  ]
-[e :U 441 ]
-{
-"344
-[; ;main.c: 344:                                             if(LDR>100 && LDR<=165){
-[e $ ! && > _LDR -> -> 100 `i `l <= _LDR -> -> 165 `i `l 443  ]
-{
-"345
-[; ;main.c: 345:                                                 GLCD_Printf("\nColor: Azul Oscuro");
-[e ( _GLCD_Printf :s 21C ]
-"346
-[; ;main.c: 346:                                                 codColor=5;
-[e = _codColor -> 5 `i ]
-"347
-[; ;main.c: 347:                                                 saldo+=500;
-[e =+ _saldo -> -> 500 `i `l ]
-"348
-[; ;main.c: 348:                                             } else {
-}
-[e $U 444  ]
-[e :U 443 ]
-{
-"349
-[; ;main.c: 349:                                                 GLCD_Printf("\nSin Protector");
-[e ( _GLCD_Printf :s 22C ]
-"350
-[; ;main.c: 350:                                                 codColor=0;
-[e = _codColor -> 0 `i ]
-"351
-[; ;main.c: 351:                                             }
-}
-[e :U 444 ]
-"352
-[; ;main.c: 352:                                         }
-}
-[e :U 442 ]
-"353
-[; ;main.c: 353:                                     }
-}
-[e :U 440 ]
-"354
-[; ;main.c: 354:                                 }
-}
-[e :U 438 ]
-"355
-[; ;main.c: 355:                             }
-}
-[e :U 436 ]
-"356
-[; ;main.c: 356:                         }
-}
-[e :U 434 ]
-"358
-[; ;main.c: 358:                         ADCON0bits.ADON=0;
-[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
-"359
-[; ;main.c: 359:                         ADCON1=0x0F;
-[e = _ADCON1 -> -> 15 `i `uc ]
-"361
-[; ;main.c: 361:                         TRISA=0x21;
-[e = _TRISA -> -> 33 `i `uc ]
-"364
-[; ;main.c: 364:                         TRISE=0x07;
-[e = _TRISE -> -> 7 `i `uc ]
-"369
-[; ;main.c: 369:                         pB=~pA;
-[e = _pB -> ~ -> _pA `i `uc ]
-"371
-[; ;main.c: 371:                         PORTA=pB;
-[e = _PORTA _pB ]
-"373
-[; ;main.c: 373:                         switch(pA){
-[e $U 446  ]
-{
-"374
-[; ;main.c: 374:                             case 2:
-[e :U 447 ]
-"375
-[; ;main.c: 375:                                 xM=0;
-[e = _xM -> 0 `i ]
-"376
-[; ;main.c: 376:                                 break;
-[e $U 445  ]
-"377
-[; ;main.c: 377:                             case 4:
-[e :U 448 ]
-"378
-[; ;main.c: 378:                                 xM=1;
-[e = _xM -> 1 `i ]
-"379
-[; ;main.c: 379:                                 break;
-[e $U 445  ]
-"380
-[; ;main.c: 380:                             case 8:
-[e :U 449 ]
-"381
-[; ;main.c: 381:                                 xM=2;
-[e = _xM -> 2 `i ]
-"382
-[; ;main.c: 382:                                 break;
-[e $U 445  ]
-"383
-[; ;main.c: 383:                             case 16:
-[e :U 450 ]
-"384
-[; ;main.c: 384:                                 xM=3;
-[e = _xM -> 3 `i ]
-"385
-[; ;main.c: 385:                                 break;
-[e $U 445  ]
-"386
-[; ;main.c: 386:                         }
-}
-[e $U 445  ]
-[e :U 446 ]
-[e [\ -> _pA `i , $ -> 2 `i 447
- , $ -> 4 `i 448
- , $ -> 8 `i 449
- , $ -> 16 `i 450
- 445 ]
-[e :U 445 ]
-"388
-[; ;main.c: 388:                         if(PORTAbits.RA5==0){
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 451  ]
-{
-"389
-[; ;main.c: 389:                             ayM=1;
-[e = _ayM -> 1 `i ]
-"390
-[; ;main.c: 390:                         } else {
-}
-[e $U 452  ]
-[e :U 451 ]
-{
-"391
-[; ;main.c: 391:                             if(PORTEbits.RE0==0){
-[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 453  ]
-{
-"392
-[; ;main.c: 392:                                 ayM=2;
-[e = _ayM -> 2 `i ]
-"393
-[; ;main.c: 393:                             } else {
-}
-[e $U 454  ]
-[e :U 453 ]
-{
-"394
-[; ;main.c: 394:                                 if(PORTEbits.RE1==0){
-[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 455  ]
-{
-"395
-[; ;main.c: 395:                                     ayM=3;
-[e = _ayM -> 3 `i ]
-"396
-[; ;main.c: 396:                                 } else {
-}
-[e $U 456  ]
-[e :U 455 ]
-{
-"397
-[; ;main.c: 397:                                     if(PORTEbits.RE2==0){
-[e $ ! == -> . . _PORTEbits 0 2 `i -> 0 `i 457  ]
-{
-"398
-[; ;main.c: 398:                                         ayM=4;
-[e = _ayM -> 4 `i ]
-"399
-[; ;main.c: 399:                                     } else {
-}
-[e $U 458  ]
-[e :U 457 ]
-{
-"400
-[; ;main.c: 400:                                         ayM=0;
-[e = _ayM -> 0 `i ]
-"401
-[; ;main.c: 401:                                     }
-}
-[e :U 458 ]
-"402
-[; ;main.c: 402:                                 }
-}
-[e :U 456 ]
-"403
-[; ;main.c: 403:                             }
-}
-[e :U 454 ]
-"404
-[; ;main.c: 404:                         }
-}
-[e :U 452 ]
-"406
-[; ;main.c: 406:                         yM=(ayM-1);
-[e = _yM - _ayM -> 1 `i ]
-[v F4049 `uc ~T0 @X0 -> 4 `i t ]
-[v F4048 `F4049 ~T0 @X0 -> 4 `i s ]
-[i F4048
+[; ;main.c: 31: int xM,yM,ayM,cond;
+[v _xM `i ~T0 @X0 1 e ]
+[v _yM `i ~T0 @X0 1 e ]
+[v _ayM `i ~T0 @X0 1 e ]
+[v _cond `i ~T0 @X0 1 e ]
+[v F4023 `uc ~T0 @X0 -> 4 `i t ]
+"32
+[; ;main.c: 32: char comb[4][4]={ '1','2','3','A',
+[v _comb `F4023 ~T0 @X0 -> 4 `i e ]
+[i _comb
 :U ..
 :U ..
-"408
-[; ;main.c: 408:                         char comb[4][4]={
 -> -> 49 `ui `uc
 -> -> 50 `ui `uc
 -> -> 51 `ui `uc
@@ -1698,298 +747,364 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ..
 ]
-[v F4051 `uc ~T0 @X0 -> 4 `i t ]
-[v _comb `F4051 ~T0 @X0 -> 4 `i a ]
-[e = _comb F4048 ]
-"415
-[; ;main.c: 415:                         int cont=1;
-[v _cont `i ~T0 @X0 1 a ]
-[e = _cont -> 1 `i ]
-"416
-[; ;main.c: 416:                         int cond=ayM;
-[v _cond `i ~T0 @X0 1 a ]
-[e = _cond _ayM ]
-"418
-[; ;main.c: 418:                         for(int i=0;i<4;i++){
+"38
+[; ;main.c: 38: int sX=40,sY=1,nC=4,xSC,ySC,contChar=1;
+[v _sX `i ~T0 @X0 1 e ]
+[i _sX
+-> 40 `i
+]
+[v _sY `i ~T0 @X0 1 e ]
+[i _sY
+-> 1 `i
+]
+[v _nC `i ~T0 @X0 1 e ]
+[i _nC
+-> 4 `i
+]
+[v _xSC `i ~T0 @X0 1 e ]
+[v _ySC `i ~T0 @X0 1 e ]
+[v _contChar `i ~T0 @X0 1 e ]
+[i _contChar
+-> 1 `i
+]
+"39
+[; ;main.c: 39: char valM;
+[v _valM `uc ~T0 @X0 1 e ]
+"42
+[; ;main.c: 42: int codColor;
+[v _codColor `i ~T0 @X0 1 e ]
+"43
+[; ;main.c: 43: char codTec[4];
+[v _codTec `uc ~T0 @X0 -> 4 `i e ]
+"46
+[; ;main.c: 46: int saldo;
+[v _saldo `i ~T0 @X0 1 e ]
+"49
+[; ;main.c: 49: long LDR;
+[v _LDR `l ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"52
+[; ;main.c: 52: void main()
+[v _main `(v ~T0 @X0 1 ef ]
+"53
+[; ;main.c: 53: {
 {
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 459  ]
-[e $U 460  ]
-[e :U 459 ]
-{
-"419
-[; ;main.c: 419:                             GLCD_SetCursor(7,(i*6));
-[e ( _GLCD_SetCursor (2 , -> -> 7 `i `uc -> * _i -> 6 `i `uc ]
-"420
-[; ;main.c: 420:                             GLCD_Printf(codTec[i]);
-[e ( _GLCD_Printf -> *U + &U _codTec * -> -> _i `ui `ux -> -> # *U &U _codTec `ui `ux `*Cuc ]
-"421
-[; ;main.c: 421:                         }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 459  ]
-[e :U 460 ]
-}
-"423
-[; ;main.c: 423:                         if(ayM>0){
-[e $ ! > _ayM -> 0 `i 462  ]
-{
-"424
-[; ;main.c: 424:                             ySC=1;
-[e = _ySC -> 1 `i ]
-"425
-[; ;main.c: 425:                             GLCD_SetCursor(ySC,xSC);
-[e ( _GLCD_SetCursor (2 , -> _ySC `uc -> _xSC `uc ]
-"426
-[; ;main.c: 426:                             valM=comb[xM][yM];
-[e = _valM *U + &U *U + &U _comb * -> -> _xM `ui `ux -> * -> # *U &U *U &U _comb `ui -> -> 4 `i `ui `ux * -> -> _yM `ui `ux -> -> # *U &U *U + &U _comb * -> -> _xM `ui `ux -> * -> # *U &U *U &U _comb `ui -> -> 4 `i `ui `ux `ui `ux ]
-"427
-[; ;main.c: 427:                             GLCD_Printf("%c",valM);
-[e ( _GLCD_Printf , (. :s 23C -> _valM `i ]
-"428
-[; ;main.c: 428:                             cont++;
-[e ++ _cont -> 1 `i ]
-"429
-[; ;main.c: 429:                             ayM=1;
-[e = _ayM -> 1 `i ]
-"430
-[; ;main.c: 430:                             xSC+=6;
-[e =+ _xSC -> 6 `i ]
-"432
-[; ;main.c: 432:                             if(cont<5){
-[e $ ! < _cont -> 5 `i 463  ]
-{
-"433
-[; ;main.c: 433:                                 codTec[cont--]=valM;
-[e = *U + &U _codTec * -> -> -- _cont -> 1 `i `ui `ux -> -> # *U &U _codTec `ui `ux _valM ]
-"434
-[; ;main.c: 434:                                 GLCD_Printf("\nCont: %d",cont);
-[e ( _GLCD_Printf , (. :s 24C _cont ]
-"435
-[; ;main.c: 435:                             } else {
-}
-[e $U 464  ]
-[e :U 463 ]
-{
-"436
-[; ;main.c: 436:                                 cont=1;
-[e = _cont -> 1 `i ]
-"437
-[; ;main.c: 437:                             }
-}
-[e :U 464 ]
-"439
-[; ;main.c: 439:                             if(xSC>18){
-[e $ ! > _xSC -> 18 `i 465  ]
-{
-"440
-[; ;main.c: 440:                                 ySC++;
-[e ++ _ySC -> 1 `i ]
-"441
-[; ;main.c: 441:                                 xSC=0;
-[e = _xSC -> 0 `i ]
-"442
-[; ;main.c: 442:                                 if(ySC>7){
-[e $ ! > _ySC -> 7 `i 466  ]
-{
-"443
-[; ;main.c: 443:                                     ySC=3;
-[e = _ySC -> 3 `i ]
-"444
-[; ;main.c: 444:                                 }
-}
-[e :U 466 ]
-"445
-[; ;main.c: 445:                             }
-}
-[e :U 465 ]
-"446
-[; ;main.c: 446:                             while(1){
-[e :U 468 ]
-{
-"447
-[; ;main.c: 447:                                 if(PORTAbits.RA5==0){
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 470  ]
-{
-"448
-[; ;main.c: 448:                                     ayM=1;
-[e = _ayM -> 1 `i ]
-"449
-[; ;main.c: 449:                                 } else {
-}
-[e $U 471  ]
-[e :U 470 ]
-{
-"450
-[; ;main.c: 450:                                     if(PORTEbits.RE0==0){
-[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 472  ]
-{
-"451
-[; ;main.c: 451:                                         ayM=2;
-[e = _ayM -> 2 `i ]
-"452
-[; ;main.c: 452:                                     } else {
-}
-[e $U 473  ]
-[e :U 472 ]
-{
-"453
-[; ;main.c: 453:                                         if(PORTEbits.RE1==0){
-[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 474  ]
-{
-"454
-[; ;main.c: 454:                                             ayM=3;
-[e = _ayM -> 3 `i ]
-"455
-[; ;main.c: 455:                                         } else {
-}
-[e $U 475  ]
-[e :U 474 ]
-{
-"456
-[; ;main.c: 456:                                             if(PORTEbits.RE2==0){
-[e $ ! == -> . . _PORTEbits 0 2 `i -> 0 `i 476  ]
-{
-"457
-[; ;main.c: 457:                                                 ayM=4;
-[e = _ayM -> 4 `i ]
-"458
-[; ;main.c: 458:                                             } else {
-}
-[e $U 477  ]
-[e :U 476 ]
-{
-"459
-[; ;main.c: 459:                                                 ayM=0;
-[e = _ayM -> 0 `i ]
-"460
-[; ;main.c: 460:                                             }
-}
-[e :U 477 ]
-"461
-[; ;main.c: 461:                                         }
-}
-[e :U 475 ]
-"462
-[; ;main.c: 462:                                     }
-}
-[e :U 473 ]
-"463
-[; ;main.c: 463:                                 }
-}
-[e :U 471 ]
-"465
-[; ;main.c: 465:                                 if(cond!=ayM){
-[e $ ! != _cond _ayM 478  ]
-{
-"466
-[; ;main.c: 466:                                     break;
-[e $U 469  ]
-"467
-[; ;main.c: 467:                                 }
-}
-[e :U 478 ]
-"468
-[; ;main.c: 468:                             }
-}
-[e :U 467 ]
-[e $U 468  ]
-[e :U 469 ]
-"469
-[; ;main.c: 469:                         }
-}
-[e :U 462 ]
-"472
-[; ;main.c: 472:                                 pA=(pA<<1);
-[e = _pA -> << -> _pA `i -> 1 `i `uc ]
-"474
-[; ;main.c: 474:                                 index++;
-[e ++ _index -> 1 `i ]
-"475
-[; ;main.c: 475:                                 if(index>3){
-[e $ ! > _index -> 3 `i 479  ]
-{
-"476
-[; ;main.c: 476:                                     index=0;
-[e = _index -> 0 `i ]
-"477
-[; ;main.c: 477:                                     pA=0x02;
-[e = _pA -> -> 2 `i `uc ]
-"478
-[; ;main.c: 478:                                 }
-}
-[e :U 479 ]
-"481
-[; ;main.c: 481:                                 if(PORTCbits.RC0==1){
-[e $ ! == -> . . _PORTCbits 0 0 `i -> 1 `i 480  ]
-{
-"482
-[; ;main.c: 482:                                     GLCD_Clear();
-[e ( _GLCD_Clear ..  ]
-"483
-[; ;main.c: 483:                                     GLCD_SetCursor(0,0);
-[e ( _GLCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"484
-[; ;main.c: 484:                                     GLCD_Printf("OFF");
-[e ( _GLCD_Printf :s 25C ]
-"485
-[; ;main.c: 485:                                     break;
-[e $U 431  ]
-"486
-[; ;main.c: 486:                                 }
-}
-[e :U 480 ]
-"490
-[; ;main.c: 490:                                 if(PORTCbits.RC1==1){
-[e $ ! == -> . . _PORTCbits 0 1 `i -> 1 `i 481  ]
-{
-"491
-[; ;main.c: 491:                                     GLCD_Clear();
-[e ( _GLCD_Clear ..  ]
-"492
-[; ;main.c: 492:                                     _delay((unsigned long)((500)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"493
-[; ;main.c: 493:                                 }
-}
-[e :U 481 ]
-"495
-[; ;main.c: 495:                     }
-}
-[e :U 429 ]
-[e $U 430  ]
-[e :U 431 ]
-"496
-[; ;main.c: 496:                 }
-}
-[e :U 428 ]
-"497
-[; ;main.c: 497:             }
-}
-[e :U 425 ]
-[e $U 426  ]
-[e :U 427 ]
-"498
-[; ;main.c: 498:         break;
-[e $U 371  ]
-"499
-[; ;main.c: 499:     }
-}
-[e $U 371  ]
+[e :U _main ]
+[f ]
+"54
+[; ;main.c: 54:     xSC=sX;
+[e = _xSC _sX ]
+"55
+[; ;main.c: 55:     ySC=sY;
+[e = _ySC _sY ]
+"57
+[; ;main.c: 57:     TRISA=0x21;
+[e = _TRISA -> -> 33 `i `uc ]
+"60
+[; ;main.c: 60:     TRISE=0x07;
+[e = _TRISE -> -> 7 `i `uc ]
+"63
+[; ;main.c: 63:     TRISC=0xFF;
+[e = _TRISC -> -> 255 `i `uc ]
+"65
+[; ;main.c: 65:     ADCON1=0x0E;
+[e = _ADCON1 -> -> 14 `i `uc ]
+"66
+[; ;main.c: 66:     ADCON0=0x01;
+[e = _ADCON0 -> -> 1 `i `uc ]
+"67
+[; ;main.c: 67:     ADCON2=0xB1;
+[e = _ADCON2 -> -> 177 `i `uc ]
+"69
+[; ;main.c: 69:     GLCD_Init();
+[e ( _GLCD_Init ..  ]
+"70
+[; ;main.c: 70:     while(1){
 [e :U 372 ]
-[e [\ _opc , $ -> 1 `i 373
- , $ -> 2 `i 394
- , $ -> 3 `i 416
- , $ -> 4 `i 424
- 371 ]
+{
+"73
+[; ;main.c: 73:         if(PORTCbits.RC0==0)
+[e $ ! == -> . . _PORTCbits 0 0 `i -> 0 `i 374  ]
+"74
+[; ;main.c: 74:         {
+{
+"76
+[; ;main.c: 76:             while(1){
+[e :U 376 ]
+{
+"78
+[; ;main.c: 78:                 ADCON0=0x01;
+[e = _ADCON0 -> -> 1 `i `uc ]
+"79
+[; ;main.c: 79:                 ADCON2=0xB1;
+[e = _ADCON2 -> -> 177 `i `uc ]
+"80
+[; ;main.c: 80:                 ADCON0bits.GODONE=1;
+[e = . . _ADCON0bits 7 1 -> -> 1 `i `uc ]
+"82
+[; ;main.c: 82:                 if(ADCON0bits.GODONE==1){
+[e $ ! == -> . . _ADCON0bits 7 1 `i -> 1 `i 378  ]
+{
+"83
+[; ;main.c: 83:                     LDR=(ADRESH*255)+(ADRESL);
+[e = _LDR -> + * -> _ADRESH `i -> 255 `i -> _ADRESL `i `l ]
+"84
+[; ;main.c: 84:                 }
+}
+[e :U 378 ]
+"86
+[; ;main.c: 86:                 GLCD_SetCursor(0,0);
+[e ( _GLCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"87
+[; ;main.c: 87:                 GLCD_Printf("LDR: %d",LDR);
+[e ( _GLCD_Printf , (. :s 1C _LDR ]
+"88
+[; ;main.c: 88:                 tapas(LDR,5,0);
+[e ( _tapas , , _LDR -> 5 `i -> 0 `i ]
+"90
+[; ;main.c: 90:                 ADCON0bits.ADON=0;
+[e = . . _ADCON0bits 1 0 -> -> 0 `i `uc ]
+"94
+[; ;main.c: 94:                 pB=~pA;
+[e = _pB -> ~ -> _pA `i `uc ]
+"95
+[; ;main.c: 95:                 PORTA=pB;
+[e = _PORTA _pB ]
+"101
+[; ;main.c: 101:                 ayM=column();
+[e = _ayM ( _column ..  ]
+"104
+[; ;main.c: 104:                 xM=row(pA);
+[e = _xM ( _row -> _pA `i ]
+"105
+[; ;main.c: 105:                 yM=(ayM-1);
+[e = _yM - _ayM -> 1 `i ]
+"107
+[; ;main.c: 107:                 cond=ayM;
+[e = _cond _ayM ]
+"109
+[; ;main.c: 109:                 GLCD_SetCursor(1,0);
+[e ( _GLCD_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"110
+[; ;main.c: 110:                 GLCD_Printf("Code: ");
+[e ( _GLCD_Printf :s 2C ]
+"112
+[; ;main.c: 112:                 if(ayM>0 && xSC<(sX+(nC*6))){
+[e $ ! && > _ayM -> 0 `i < _xSC + _sX * _nC -> 6 `i 379  ]
+{
+"113
+[; ;main.c: 113:                     GLCD_SetCursor(ySC,xSC);
+[e ( _GLCD_SetCursor (2 , -> _ySC `uc -> _xSC `uc ]
+"114
+[; ;main.c: 114:                     valM=comb[xM][yM];
+[e = _valM *U + &U *U + &U _comb * -> -> _xM `ui `ux -> * -> # *U &U *U &U _comb `ui -> -> 4 `i `ui `ux * -> -> _yM `ui `ux -> -> # *U &U *U + &U _comb * -> -> _xM `ui `ux -> * -> # *U &U *U &U _comb `ui -> -> 4 `i `ui `ux `ui `ux ]
+"115
+[; ;main.c: 115:                     GLCD_Printf("%c",valM);
+[e ( _GLCD_Printf , (. :s 3C -> _valM `i ]
+"118
+[; ;main.c: 118:                     ySC=1;
+[e = _ySC -> 1 `i ]
+"119
+[; ;main.c: 119:                     xSC+=6;
+[e =+ _xSC -> 6 `i ]
+"122
+[; ;main.c: 122:                     codTec[contChar-1]=valM;
+[e = *U + &U _codTec * -> -> - _contChar -> 1 `i `ui `ux -> -> # *U &U _codTec `ui `ux _valM ]
+"125
+[; ;main.c: 125:                     contChar++;
+[e ++ _contChar -> 1 `i ]
+"127
+[; ;main.c: 127:                     while(1){
+[e :U 381 ]
+{
+"128
+[; ;main.c: 128:                         ayM=column();
+[e = _ayM ( _column ..  ]
+"129
+[; ;main.c: 129:                         if(cond!=ayM){
+[e $ ! != _cond _ayM 383  ]
+{
+"130
+[; ;main.c: 130:                             break;
+[e $U 382  ]
+"131
+[; ;main.c: 131:                         }
+}
+[e :U 383 ]
+"132
+[; ;main.c: 132:                     }
+}
+[e :U 380 ]
+[e $U 381  ]
+[e :U 382 ]
+"133
+[; ;main.c: 133:                 }
+}
+[e :U 379 ]
+"134
+[; ;main.c: 134:                 GLCD_SetCursor(2,0);
+[e ( _GLCD_SetCursor (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"135
+[; ;main.c: 135:                 GLCD_Printf("Cont: %1d",contChar);
+[e ( _GLCD_Printf , (. :s 4C _contChar ]
+"136
+[; ;main.c: 136:                 if(contChar>4){
+[e $ ! > _contChar -> 4 `i 384  ]
+{
+"137
+[; ;main.c: 137:                     int c;
+[v _c `i ~T0 @X0 1 a ]
+"138
+[; ;main.c: 138:                     char v;
+[v _v `uc ~T0 @X0 1 a ]
+"139
+[; ;main.c: 139:                     while(1){
+[e :U 386 ]
+{
+"140
+[; ;main.c: 140:                         v=codTec[c];
+[e = _v *U + &U _codTec * -> -> _c `ui `ux -> -> # *U &U _codTec `ui `ux ]
+"141
+[; ;main.c: 141:                         GLCD_SetCursor(3,0);
+[e ( _GLCD_SetCursor (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
+"142
+[; ;main.c: 142:                         GLCD_Printf("%c",v);
+[e ( _GLCD_Printf , (. :s 5C -> _v `i ]
+"143
+[; ;main.c: 143:                         c++;
+[e ++ _c -> 1 `i ]
+"144
+[; ;main.c: 144:                         if(c>3){
+[e $ ! > _c -> 3 `i 388  ]
+{
+"145
+[; ;main.c: 145:                             c=0;
+[e = _c -> 0 `i ]
+"146
+[; ;main.c: 146:                         }
+}
+[e :U 388 ]
+"147
+[; ;main.c: 147:                         _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"148
+[; ;main.c: 148:                     }
+}
+[e :U 385 ]
+[e $U 386  ]
+[e :U 387 ]
+"149
+[; ;main.c: 149:                 }
+}
+[e :U 384 ]
+"154
+[; ;main.c: 154:                 if(PORTCbits.RC0==1){
+[e $ ! == -> . . _PORTCbits 0 0 `i -> 1 `i 389  ]
+{
+"155
+[; ;main.c: 155:                     GLCD_Clear();
+[e ( _GLCD_Clear ..  ]
+"156
+[; ;main.c: 156:                     GLCD_SetCursor(0,0);
+[e ( _GLCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"157
+[; ;main.c: 157:                     GLCD_Printf("OFF");
+[e ( _GLCD_Printf :s 6C ]
+"158
+[; ;main.c: 158:                     break;
+[e $U 377  ]
+"159
+[; ;main.c: 159:                 }
+}
+[e :U 389 ]
+"161
+[; ;main.c: 161:                 if(PORTCbits.RC1==1){
+[e $ ! == -> . . _PORTCbits 0 1 `i -> 1 `i 390  ]
+{
+"162
+[; ;main.c: 162:                     reset();
+[e ( _reset ..  ]
+"163
+[; ;main.c: 163:                 }
+}
+[e :U 390 ]
+"165
+[; ;main.c: 165:                 pA=(pA<<1);
+[e = _pA -> << -> _pA `i -> 1 `i `uc ]
+"167
+[; ;main.c: 167:                 index++;
+[e ++ _index -> 1 `i ]
+"168
+[; ;main.c: 168:                 if(index>3){
+[e $ ! > _index -> 3 `i 391  ]
+{
+"169
+[; ;main.c: 169:                     index=0;
+[e = _index -> 0 `i ]
+"170
+[; ;main.c: 170:                     pA=0x02;
+[e = _pA -> -> 2 `i `uc ]
+"171
+[; ;main.c: 171:                 }
+}
+[e :U 391 ]
+"173
+[; ;main.c: 173:             }
+}
+[e :U 375 ]
+[e $U 376  ]
+[e :U 377 ]
+"174
+[; ;main.c: 174:         }
+}
+[e :U 374 ]
+"175
+[; ;main.c: 175:     }
+}
 [e :U 371 ]
-"500
-[; ;main.c: 500: }
+[e $U 372  ]
+[e :U 373 ]
+"176
+[; ;main.c: 176: }
 [e :UE 370 ]
 }
-"502
-[; ;main.c: 502: long map(long x, long in_m, long in_M, long out_m, long out_M){
+"179
+[; ;main.c: 179: void reset(){
+[v _reset `(v ~T0 @X0 1 ef ]
+{
+[e :U _reset ]
+[f ]
+"181
+[; ;main.c: 181:     for(int i=sX; i<(sX+(nC*6));i+=(nC*6)){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i _sX ]
+[e $U 396  ]
+[e :U 393 ]
+{
+"182
+[; ;main.c: 182:         GLCD_SetCursor(sY,i);
+[e ( _GLCD_SetCursor (2 , -> _sY `uc -> _i `uc ]
+"183
+[; ;main.c: 183:         GLCD_Printf(" ");
+[e ( _GLCD_Printf :s 7C ]
+"184
+[; ;main.c: 184:     }
+}
+[e =+ _i * _nC -> 6 `i ]
+[e :U 396 ]
+[e $ < _i + _sX * _nC -> 6 `i 393  ]
+[e :U 394 ]
+}
+"185
+[; ;main.c: 185:     _delay((unsigned long)((500)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"186
+[; ;main.c: 186: }
+[e :UE 392 ]
+}
+"188
+[; ;main.c: 188: long map(long x, long in_m, long in_M, long out_m, long out_M){
 [v _map `(l ~T0 @X0 1 ef5`l`l`l`l`l ]
 {
 [e :U _map ]
@@ -1999,36 +1114,334 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _out_m `l ~T0 @X0 1 r4 ]
 [v _out_M `l ~T0 @X0 1 r5 ]
 [f ]
-"503
-[; ;main.c: 503:     return (x-in_m)*(out_M-out_m)/(in_M-in_m)+out_m;
+"189
+[; ;main.c: 189:     return (x-in_m)*(out_M-out_m)/(in_M-in_m)+out_m;
 [e ) + / * - _x _in_m - _out_M _out_m - _in_M _in_m _out_m ]
-[e $UE 482  ]
-"504
-[; ;main.c: 504: }
-[e :UE 482 ]
+[e $UE 397  ]
+"190
+[; ;main.c: 190: }
+[e :UE 397 ]
 }
-[a 12C 69 114 114 111 114 32 100 101 32 83 101 116 80 111 105 110 116 0 ]
-[a 22C 10 83 105 110 32 80 114 111 116 101 99 116 111 114 0 ]
-[a 9C 10 67 111 108 111 114 58 32 65 122 117 108 32 79 115 99 117 114 111 0 ]
-[a 21C 10 67 111 108 111 114 58 32 65 122 117 108 32 79 115 99 117 114 111 0 ]
-[a 8C 10 67 111 108 111 114 58 32 86 101 114 100 101 32 79 115 99 117 114 111 0 ]
-[a 20C 10 67 111 108 111 114 58 32 86 101 114 100 101 32 79 115 99 117 114 111 0 ]
-[a 7C 10 67 111 108 111 114 58 32 65 122 117 108 32 67 108 97 114 111 0 ]
-[a 19C 10 67 111 108 111 114 58 32 65 122 117 108 32 67 108 97 114 111 0 ]
-[a 6C 10 67 111 108 111 114 58 32 65 109 97 114 105 108 108 111 0 ]
-[a 18C 10 67 111 108 111 114 58 32 65 109 97 114 105 108 108 111 0 ]
-[a 5C 10 67 111 108 111 114 58 32 66 108 97 110 99 111 0 ]
-[a 17C 10 67 111 108 111 114 58 32 66 108 97 110 99 111 0 ]
-[a 24C 10 67 111 110 116 58 32 37 100 0 ]
-[a 13C 83 101 116 80 111 105 110 116 58 32 37 100 0 ]
-[a 11C 84 101 109 112 58 32 37 100 0 ]
-[a 15C 76 68 82 58 32 37 100 0 ]
-[a 23C 37 99 0 ]
-[a 14C 84 101 109 112 101 114 97 116 117 114 97 32 69 108 101 118 97 100 97 0 ]
-[a 25C 79 70 70 0 ]
-[a 10C 10 45 62 32 78 111 32 72 97 121 32 80 114 111 116 101 99 116 111 114 33 0 ]
-[a 4C 10 45 62 32 78 111 32 72 97 121 32 84 97 112 97 33 0 ]
-[a 16C 10 45 62 32 78 111 32 72 97 121 32 84 97 112 97 33 0 ]
-[a 3C 32 0 ]
-[a 2C 10 76 117 122 58 32 37 49 100 10 0 ]
-[a 1C 10 76 117 122 58 32 37 100 10 0 ]
+"192
+[; ;main.c: 192: void tapas(long val, int y, int x){
+[v _tapas `(v ~T0 @X0 1 ef3`l`i`i ]
+{
+[e :U _tapas ]
+[v _val `l ~T0 @X0 1 r1 ]
+[v _y `i ~T0 @X0 1 r2 ]
+[v _x `i ~T0 @X0 1 r3 ]
+[f ]
+"193
+[; ;main.c: 193:     GLCD_SetCursor(y,x);
+[e ( _GLCD_SetCursor (2 , -> _y `uc -> _x `uc ]
+"194
+[; ;main.c: 194:     if(val>748){
+[e $ ! > _val -> -> 748 `i `l 399  ]
+{
+"195
+[; ;main.c: 195:         GLCD_Printf("\n-> No Hay Tapa!");
+[e ( _GLCD_Printf :s 8C ]
+"196
+[; ;main.c: 196:         codColor=0;
+[e = _codColor -> 0 `i ]
+"197
+[; ;main.c: 197:     } else {
+}
+[e $U 400  ]
+[e :U 399 ]
+{
+"198
+[; ;main.c: 198:         if(val>715&&val<=730){
+[e $ ! && > _val -> -> 715 `i `l <= _val -> -> 730 `i `l 401  ]
+{
+"199
+[; ;main.c: 199:             GLCD_Printf("\nColor: Blanco");
+[e ( _GLCD_Printf :s 9C ]
+"200
+[; ;main.c: 200:             codColor=1;
+[e = _codColor -> 1 `i ]
+"201
+[; ;main.c: 201:             saldo+=10000;
+[e =+ _saldo -> 10000 `i ]
+"202
+[; ;main.c: 202:         } else {
+}
+[e $U 402  ]
+[e :U 401 ]
+{
+"203
+[; ;main.c: 203:             if(val>680 && val<=710){
+[e $ ! && > _val -> -> 680 `i `l <= _val -> -> 710 `i `l 403  ]
+{
+"204
+[; ;main.c: 204:                 GLCD_Printf("\nColor: Amarillo");
+[e ( _GLCD_Printf :s 10C ]
+"205
+[; ;main.c: 205:                 codColor=2;
+[e = _codColor -> 2 `i ]
+"206
+[; ;main.c: 206:                 saldo+=5000;
+[e =+ _saldo -> 5000 `i ]
+"207
+[; ;main.c: 207:             } else {
+}
+[e $U 404  ]
+[e :U 403 ]
+{
+"208
+[; ;main.c: 208:                 if(val>650 && val<=680){
+[e $ ! && > _val -> -> 650 `i `l <= _val -> -> 680 `i `l 405  ]
+{
+"209
+[; ;main.c: 209:                     GLCD_Printf("\nColor: Azul Claro");
+[e ( _GLCD_Printf :s 11C ]
+"210
+[; ;main.c: 210:                     codColor=3;
+[e = _codColor -> 3 `i ]
+"211
+[; ;main.c: 211:                     saldo+=2000;
+[e =+ _saldo -> 2000 `i ]
+"212
+[; ;main.c: 212:                 } else {
+}
+[e $U 406  ]
+[e :U 405 ]
+{
+"213
+[; ;main.c: 213:                     if(val>330 && val<=370){
+[e $ ! && > _val -> -> 330 `i `l <= _val -> -> 370 `i `l 407  ]
+{
+"214
+[; ;main.c: 214:                         GLCD_Printf("\nColor: Verde Oscuro");
+[e ( _GLCD_Printf :s 12C ]
+"215
+[; ;main.c: 215:                         codColor=4;
+[e = _codColor -> 4 `i ]
+"216
+[; ;main.c: 216:                         saldo+=1000;
+[e =+ _saldo -> 1000 `i ]
+"217
+[; ;main.c: 217:                     } else {
+}
+[e $U 408  ]
+[e :U 407 ]
+{
+"218
+[; ;main.c: 218:                         if(val>100 && val<=165){
+[e $ ! && > _val -> -> 100 `i `l <= _val -> -> 165 `i `l 409  ]
+{
+"219
+[; ;main.c: 219:                             GLCD_Printf("\nColor: Azul Oscuro");
+[e ( _GLCD_Printf :s 13C ]
+"220
+[; ;main.c: 220:                             codColor=5;
+[e = _codColor -> 5 `i ]
+"221
+[; ;main.c: 221:                             saldo+=500;
+[e =+ _saldo -> 500 `i ]
+"222
+[; ;main.c: 222:                         } else {
+}
+[e $U 410  ]
+[e :U 409 ]
+{
+"223
+[; ;main.c: 223:                             GLCD_Printf("\nSin Protector");
+[e ( _GLCD_Printf :s 14C ]
+"224
+[; ;main.c: 224:                             codColor=0;
+[e = _codColor -> 0 `i ]
+"225
+[; ;main.c: 225:                         }
+}
+[e :U 410 ]
+"226
+[; ;main.c: 226:                     }
+}
+[e :U 408 ]
+"227
+[; ;main.c: 227:                 }
+}
+[e :U 406 ]
+"228
+[; ;main.c: 228:             }
+}
+[e :U 404 ]
+"229
+[; ;main.c: 229:         }
+}
+[e :U 402 ]
+"230
+[; ;main.c: 230:     }
+}
+[e :U 400 ]
+"231
+[; ;main.c: 231: }
+[e :UE 398 ]
+}
+"233
+[; ;main.c: 233: int row(int portA){
+[v _row `(i ~T0 @X0 1 ef1`i ]
+{
+[e :U _row ]
+[v _portA `i ~T0 @X0 1 r1 ]
+[f ]
+"234
+[; ;main.c: 234:     switch(portA){
+[e $U 413  ]
+{
+"235
+[; ;main.c: 235:         case 2:
+[e :U 414 ]
+"236
+[; ;main.c: 236:             return 0;
+[e ) -> 0 `i ]
+[e $UE 411  ]
+"237
+[; ;main.c: 237:             break;
+[e $U 412  ]
+"238
+[; ;main.c: 238:         case 4:
+[e :U 415 ]
+"239
+[; ;main.c: 239:             return 1;
+[e ) -> 1 `i ]
+[e $UE 411  ]
+"240
+[; ;main.c: 240:             break;
+[e $U 412  ]
+"241
+[; ;main.c: 241:         case 8:
+[e :U 416 ]
+"242
+[; ;main.c: 242:             return 2;
+[e ) -> 2 `i ]
+[e $UE 411  ]
+"243
+[; ;main.c: 243:             break;
+[e $U 412  ]
+"244
+[; ;main.c: 244:         case 16:
+[e :U 417 ]
+"245
+[; ;main.c: 245:             return 3;
+[e ) -> 3 `i ]
+[e $UE 411  ]
+"246
+[; ;main.c: 246:             break;
+[e $U 412  ]
+"247
+[; ;main.c: 247:     }
+}
+[e $U 412  ]
+[e :U 413 ]
+[e [\ _portA , $ -> 2 `i 414
+ , $ -> 4 `i 415
+ , $ -> 8 `i 416
+ , $ -> 16 `i 417
+ 412 ]
+[e :U 412 ]
+"248
+[; ;main.c: 248: }
+[e :UE 411 ]
+}
+"250
+[; ;main.c: 250: int column(){
+[v _column `(i ~T0 @X0 1 ef ]
+{
+[e :U _column ]
+[f ]
+"251
+[; ;main.c: 251:     if(PORTAbits.RA5==0){
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 419  ]
+{
+"252
+[; ;main.c: 252:         return 1;
+[e ) -> 1 `i ]
+[e $UE 418  ]
+"253
+[; ;main.c: 253:     } else {
+}
+[e $U 420  ]
+[e :U 419 ]
+{
+"254
+[; ;main.c: 254:         if(PORTEbits.RE0==0){
+[e $ ! == -> . . _PORTEbits 0 0 `i -> 0 `i 421  ]
+{
+"255
+[; ;main.c: 255:             return 2;
+[e ) -> 2 `i ]
+[e $UE 418  ]
+"256
+[; ;main.c: 256:         } else {
+}
+[e $U 422  ]
+[e :U 421 ]
+{
+"257
+[; ;main.c: 257:             if(PORTEbits.RE1==0){
+[e $ ! == -> . . _PORTEbits 0 1 `i -> 0 `i 423  ]
+{
+"258
+[; ;main.c: 258:                 return 3;
+[e ) -> 3 `i ]
+[e $UE 418  ]
+"259
+[; ;main.c: 259:             } else {
+}
+[e $U 424  ]
+[e :U 423 ]
+{
+"260
+[; ;main.c: 260:                 if(PORTEbits.RE2==0){
+[e $ ! == -> . . _PORTEbits 0 2 `i -> 0 `i 425  ]
+{
+"261
+[; ;main.c: 261:                     return 4;
+[e ) -> 4 `i ]
+[e $UE 418  ]
+"262
+[; ;main.c: 262:                 } else {
+}
+[e $U 426  ]
+[e :U 425 ]
+{
+"263
+[; ;main.c: 263:                     return 0;
+[e ) -> 0 `i ]
+[e $UE 418  ]
+"264
+[; ;main.c: 264:                 }
+}
+[e :U 426 ]
+"265
+[; ;main.c: 265:             }
+}
+[e :U 424 ]
+"266
+[; ;main.c: 266:         }
+}
+[e :U 422 ]
+"267
+[; ;main.c: 267:     }
+}
+[e :U 420 ]
+"268
+[; ;main.c: 268: }
+[e :UE 418 ]
+}
+[a 14C 10 83 105 110 32 80 114 111 116 101 99 116 111 114 0 ]
+[a 13C 10 67 111 108 111 114 58 32 65 122 117 108 32 79 115 99 117 114 111 0 ]
+[a 12C 10 67 111 108 111 114 58 32 86 101 114 100 101 32 79 115 99 117 114 111 0 ]
+[a 11C 10 67 111 108 111 114 58 32 65 122 117 108 32 67 108 97 114 111 0 ]
+[a 10C 10 67 111 108 111 114 58 32 65 109 97 114 105 108 108 111 0 ]
+[a 9C 10 67 111 108 111 114 58 32 66 108 97 110 99 111 0 ]
+[a 4C 67 111 110 116 58 32 37 49 100 0 ]
+[a 1C 76 68 82 58 32 37 100 0 ]
+[a 3C 37 99 0 ]
+[a 5C 37 99 0 ]
+[a 6C 79 70 70 0 ]
+[a 8C 10 45 62 32 78 111 32 72 97 121 32 84 97 112 97 33 0 ]
+[a 2C 67 111 100 101 58 32 0 ]
+[a 7C 32 0 ]
