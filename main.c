@@ -49,9 +49,9 @@ int saldo;
 long LDR;
 
 //Productos
-char prod[4][3]={   'A','B','C','B',
+char prod[4][3]={   'A','D','C','B',
                     '5','9','7','C',
-                    '' ,'' , '','1' };
+                    ' ',' ',' ','1' };
 
 void main() 
 {
@@ -73,8 +73,11 @@ void main()
     GLCD_Init();
     while(1){
         
+        GLCD_DisplayLogo(LogoBitMap[6]);
+//        __delay_ms(1000);
+        
 //      ********* Bloque de Switch On/Off P1 *****
-        if(PORTCbits.RC0==0)    //Dejar PORTCbits.RCO==1
+        if(PORTCbits.RC0==1)    //Dejar PORTCbits.RCO==1
         {
 //      ******************************************
             while(1){
@@ -113,44 +116,83 @@ void main()
                 GLCD_SetCursor(1,0);
                 GLCD_Printf("Code: ");
                 
-                if(ayM>0 && xSC<(sX+(nC*6))){
-                    GLCD_SetCursor(ySC,xSC);
-                    valM=comb[xM][yM];
-                    GLCD_Printf("%c",valM);
-                    
-                //Control de Cursor
-                    ySC=1;
-                    xSC+=6; //Dejarlo en 6 cuando se termine
-                    
-                //Control de Texto Ingresado
-                    codTec[contChar-1]=valM;
-                            
-                //Contador de Caracteres
-                    contChar++;
-                    
-                    while(1){
-                        ayM=column();
-                        if(cond!=ayM){
-                            break;
+                if(ayM>0){
+                    if(xSC<(sX+(nC*6)))
+                    {
+                        GLCD_SetCursor(ySC,xSC);
+                        valM=comb[xM][yM];
+                        GLCD_Printf("%c",valM);
+
+                    //Control de Cursor
+                        ySC=1;
+                        xSC+=6; //Dejarlo en 6 cuando se termine
+
+                    //Control de Texto Ingresado
+                        codTec[contChar-1]=valM;
+
+                    //Contador de Caracteres
+                        contChar++;
+
+                        while(1){
+                            ayM=column();
+                            if(cond!=ayM){
+                                break;
+                            }
                         }
-                    }
-                }
-                GLCD_SetCursor(2,0);
-                GLCD_Printf("Cont: %1d",contChar);
-                if(contChar>4){
-                    int c;
-                    char v;
-                    while(1){
-                        v=codTec[c];
+                    } 
+                    if((contChar)>4){
+                        int i=0;
                         GLCD_SetCursor(3,0);
-                        GLCD_Printf("%c",v);
-                        c++;
-                        if(c>3){
-                            c=0;
+                        for(int x=0;x<4;x++){
+                            for(int y=0;y<3;y++){
+                                char product=prod[x][y];
+                                char p=codTec[i];
+                                if(y>2){
+                                    i++;
+                                }
+                                if(p!=product){
+                                    GLCD_Printf("No Prod");
+                                    GLCD_SetCursor(3,0);
+                                    GLCD_Printf("%c",product);
+                                    GLCD_Printf("%c",p);
+                                    __delay_ms(800);
+                                } else {
+                                    GLCD_SetCursor(3,0);
+                                    GLCD_Printf("%c",product);
+                                    GLCD_Printf("%c",p);
+                                    __delay_ms(800);
+                                }
+//                                if(codTec[x]==product){
+//                                    GLCD_SetCursor(3,0);
+//                                    GLCD_Printf("%c",product);
+//                                    __delay_ms(1000);
+//                                } else {
+//                                    GLCD_SetCursor(3,0);
+//                                    GLCD_Printf("%c",product);
+//                                    __delay_ms(1000);
+//                                }
+                                
+                            }
                         }
-                        __delay_ms(500);
                     }
                 }
+                
+                GLCD_SetCursor(2,0);
+                GLCD_Printf("Cont: %1d",(contChar));
+//                if(contChar>4){
+//                    int c;
+//                    char v;
+//                    while(1){
+//                        v=codTec[c];
+//                        GLCD_SetCursor(3,0);
+//                        GLCD_Printf("%c",v);
+//                        c++;
+//                        if(c>3){
+//                            c=0;
+//                        }
+//                        __delay_ms(500);
+//                    }
+//                }
                 
 //      *********************************************
 
@@ -181,12 +223,13 @@ void main()
 
 //********* Bloque de Switch Clear ************
 void reset(){
-//        GLCD_Clear();
-    for(int i=sX; i<(sX+(nC*6));i+=(nC*6)){
-        GLCD_SetCursor(sY,i);
+    for(int i=0; i<4;i++){
+        GLCD_SetCursor(sY,(sX+(i*6)));
         GLCD_Printf(" ");
+        xSC=sX;
+        contChar=1;
     }
-    __delay_ms(500);
+//    __delay_ms(500);
 }
 //*********************************************
 long map(long x, long in_m, long in_M, long out_m, long out_M){
