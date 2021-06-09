@@ -38,7 +38,7 @@ Errors and omissions should be reported to codelibraries@exploreembedded.com
 
 
 #include"delay.h"
-
+#define _XTAL_FREQ 16000000
 /***************************************************************************************************
                          void DELAY_us(uint16_t us_count)
  ****************************************************************************************************

@@ -864,9 +864,6 @@ void GLCD_DisplayLogo(const char ptr_Logo[])
 #endif
 
 
-
-
-
 /***************************************************************************************************
 void GLCD_VerticalGraph(uint8_t var_barGraphNumber_u8, uint8_t var_percentageValue_u8)
  ****************************************************************************************************

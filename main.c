@@ -18,8 +18,9 @@
 
 //Funciones
 long map();
-void tapas(),reset();
-int column(),row();
+int column(),row(),products();
+void tapas(),reset(),configPWM(),GLCD_ClearLine();
+
 
 //Multiplexor
 uint8_t pA=0x02;
@@ -43,15 +44,19 @@ int codColor;
 char codTec[4];
 
 //Saldo
-int saldo;
+unsigned int saldo;
+int stdSaldo;
 
 //Sensores
 long LDR;
+int LM35=18;
 
 //Productos
-char prod[4][3]={   'A','D','C','B',
+char prod[4][4]={   'A','D','C','B',
                     '5','9','7','C',
-                    ' ',' ',' ','1' };
+                    ' ',' ',' ','1',
+                    ' ',' ',' ',' '};
+int cost[4]={35,50,100,85};
 
 void main() 
 {
@@ -63,22 +68,33 @@ void main()
     //Columnas A5-E2    Inputs
     TRISE=0x07;
 
-    //Switch On/Off
+    //Switch On/Off || Switch Reset ||  Led
+    //RC0           || RC1          ||  RC2
     TRISC=0xFF;
+    TRISCbits.RC6=1;
+    TRISCbits.RC7=0;
 
     ADCON1=0x0E;
     ADCON0=0x01;
     ADCON2=0xB1;
-
+    
     GLCD_Init();
+    
     while(1){
-        
-        GLCD_DisplayLogo(LogoBitMap[6]);
-//        __delay_ms(1000);
-        
+        configPWM();
+        PORTCbits.RC7=0;
 //      ********* Bloque de Switch On/Off P1 *****
-        if(PORTCbits.RC0==1)    //Dejar PORTCbits.RCO==1
-        {
+        if(PORTCbits.RC0==0)    //Dejar PORTCbits.RCO==1
+        {          
+            GLCD_DisplayLogo(LogoBitMap);
+            __delay_ms(2500);
+            GLCD_Clear();
+            GLCD_SetCursor(0,0);
+            GLCD_Printf("     Bienvenido al \n dispensador MLP3000");
+            __delay_ms(3500);
+            GLCD_Clear();
+            PORTCbits.RC7=1;
+            __delay_ms(500);
 //      ******************************************
             while(1){
 //      ********* Bloque de Sensor LDR **********
@@ -92,11 +108,16 @@ void main()
 
                 GLCD_SetCursor(0,0);
                 GLCD_Printf("LDR: %d",LDR);
-                tapas(LDR,5,0);         //tapas(long val,int y, int x)
+                tapas(LDR,6,0);         //tapas(long val,int y, int x)
                 
                 ADCON0bits.ADON=0;
 
-
+//      ********* Bloque de Sensor LM35 ****************
+                GLCD_SetCursor(7,103);
+                GLCD_Printf("18~C");
+                
+//      ************************************************          
+                
 //      ********* Bloque de Multiplexación P1***********
                 pB=~pA;
                 PORTA=pB;
@@ -115,6 +136,8 @@ void main()
                 
                 GLCD_SetCursor(1,0);
                 GLCD_Printf("Code: ");
+                
+                char ped[4];
                 
                 if(ayM>0){
                     if(xSC<(sX+(nC*6)))
@@ -140,60 +163,63 @@ void main()
                             }
                         }
                     } 
+                    
                     if((contChar)>4){
-                        int i=0;
-                        GLCD_SetCursor(3,0);
-                        for(int x=0;x<4;x++){
-                            for(int y=0;y<3;y++){
-                                char product=prod[x][y];
+                        int x=0;
+//                        GLCD_SetCursor(4,0);
+                        for(int i=0;i<4;i++){
+                            for(int j=0;j<4;j++){
+                                char product=prod[i][j];
                                 char p=codTec[i];
-                                if(y>2){
-                                    i++;
-                                }
-                                if(p!=product){
-                                    GLCD_Printf("No Prod");
-                                    GLCD_SetCursor(3,0);
-                                    GLCD_Printf("%c",product);
-                                    GLCD_Printf("%c",p);
-                                    __delay_ms(800);
-                                } else {
-                                    GLCD_SetCursor(3,0);
-                                    GLCD_Printf("%c",product);
-                                    GLCD_Printf("%c",p);
-                                    __delay_ms(800);
-                                }
-//                                if(codTec[x]==product){
-//                                    GLCD_SetCursor(3,0);
-//                                    GLCD_Printf("%c",product);
-//                                    __delay_ms(1000);
-//                                } else {
-//                                    GLCD_SetCursor(3,0);
-//                                    GLCD_Printf("%c",product);
-//                                    __delay_ms(1000);
-//                                }
-                                
+                                if(p==product){
+//                                    GLCD_SetCursor(4,0);
+                                    ped[x]=p;
+//                                    GLCD_Printf("%c",p);
+                                    __delay_ms(1000);
+                                    x++;
+                                } 
                             }
+                        }
+                        int p=products(ped);
+                        int c=cost[p-1];
+                        reset(0);
+                        GLCD_SetCursor(4,0);
+                        GLCD_Printf("Precio: %d00",c);
+                        contChar=1;
+                        if(saldo>=c){
+                            __delay_ms(200);
+                            saldo-=c;
+                            stdSaldo=1;
+                        } else {
+                            stdSaldo=0;
                         }
                     }
                 }
                 
-                GLCD_SetCursor(2,0);
-                GLCD_Printf("Cont: %1d",(contChar));
-//                if(contChar>4){
-//                    int c;
-//                    char v;
-//                    while(1){
-//                        v=codTec[c];
-//                        GLCD_SetCursor(3,0);
-//                        GLCD_Printf("%c",v);
-//                        c++;
-//                        if(c>3){
-//                            c=0;
-//                        }
-//                        __delay_ms(500);
-//                    }
-//                }
                 
+                
+                GLCD_SetCursor(3,0);
+                if(stdSaldo){
+                    if(saldo!=0){
+                        GLCD_Printf("Saldo: $%d00",saldo);
+                    } else{
+                        GLCD_Printf("Saldo: $%1d",saldo);
+                    }
+                } else {
+                    GLCD_Printf("Saldo Insuficiente");
+                }
+                
+                GLCD_SetCursor(4,0);
+                GLCD_Printf("Precio: ");
+                
+                if(saldo==0){
+                    GLCD_SetCursor(5,0);
+                    GLCD_Printf("Ingrese saldo.");
+                } else {
+                    GLCD_SetCursor(5,0);
+                    GLCD_Printf("                                           ");
+                }
+               
 //      *********************************************
 
 //      ********* Bloque de Switch On/Off P2*********
@@ -204,8 +230,8 @@ void main()
                     break;
                 }
 //      *********************************************       
-                if(PORTCbits.RC1==1){
-                    reset();
+                if(PORTCbits.RC6==1){
+                    reset(1);
                 }
 //      ********* Bloque de Multiplexación P2********
                 pA=(pA<<1);
@@ -222,13 +248,25 @@ void main()
 }
 
 //********* Bloque de Switch Clear ************
-void reset(){
-    for(int i=0; i<4;i++){
-        GLCD_SetCursor(sY,(sX+(i*6)));
-        GLCD_Printf(" ");
-        xSC=sX;
-        contChar=1;
+void reset(int yn){
+    if(yn==1){
+        for(int i=0; i<4;i++){
+            GLCD_SetCursor(sY,(sX+(i*6)));
+            GLCD_Printf(" ");
+            xSC=sX;
+            contChar=1;
+        }
     }
+    
+    if(yn==0){
+        for(int i=0; i<4;i++){
+            GLCD_SetCursor(sY,(sX+(i*6)));
+            GLCD_Printf(" ");
+            xSC=sX;
+//            contChar=1;
+        }
+    }
+    
 //    __delay_ms(500);
 }
 //*********************************************
@@ -237,43 +275,49 @@ long map(long x, long in_m, long in_M, long out_m, long out_M){
 }
 
 void tapas(long val, int y, int x){
+    int ranges[10]={    335,345,        //Blanco
+                        260,275,        //Amarillo
+                        175,190,        //Azul Claro
+                        45,55,          //Verde Oscuro
+                        15,25};         //Azul Oscuro
     GLCD_SetCursor(y,x);
-    if(val>748){
-        GLCD_Printf("\n-> No Hay Tapa!");  
-        codColor=0;
-    } else {
-        if(val>715&&val<=730){
+//    if(val>748){
+//        GLCD_Printf("\n-> No Hay Tapa!");  
+//        codColor=0;
+//    } else {
+        if(val>ranges[0]&&val<=ranges[1]){
             GLCD_Printf("\nColor: Blanco");
             codColor=1;
-            saldo+=10000;
+            saldo+=100;
         } else {
-            if(val>680 && val<=710){
+            if(val>ranges[2] && val<=ranges[3]){
                 GLCD_Printf("\nColor: Amarillo");
                 codColor=2;
-                saldo+=5000;
+                saldo+=50;
             } else {
-                if(val>650 && val<=680){
+                if(val>ranges[4] && val<=ranges[5]){
                     GLCD_Printf("\nColor: Azul Claro");
                     codColor=3;
-                    saldo+=2000;
+                    saldo+=20;
                 } else {
-                    if(val>330 && val<=370){
+                    if(val>ranges[6] && val<=ranges[7]){
                         GLCD_Printf("\nColor: Verde Oscuro");
                         codColor=4;
-                        saldo+=1000;
+                        saldo+=10;
                     } else {
-                        if(val>100 && val<=165){
+                        if(val>ranges[8] && val<=ranges[9]){
                             GLCD_Printf("\nColor: Azul Oscuro");
                             codColor=5;
-                            saldo+=500;
-                        } else {
-                            GLCD_Printf("\nSin Protector");
-                            codColor=0;
-                        }
-                    }
+                            saldo+=5;
+                        } 
+//                        else {
+//                            GLCD_Printf("\nSin Protector");
+//                            codColor=0;
+//                        }
+//                    }
                 }
             }
-        }
+        }  
     }
 }
 
@@ -313,4 +357,60 @@ int column(){
         }
     }
 }
+
+void configPWM(){
+    PR2=0xFF;
+    CCPR1L=0x02;
+    CCP1CONbits.DC1B0=0;
+    CCP1CONbits.DC1B1=0;
+    
+    TRISCbits.RC2=0;
+    T2CONbits.T2CKPS=3;
+    
+    CCP1CONbits.CCP1M0=1;
+    CCP1CONbits.CCP1M1=1;
+    CCP1CONbits.CCP1M2=1;
+    CCP1CONbits.CCP1M3=1;
+    
+    TMR2=0;
+    
+    T2CONbits.TMR2ON=1;
+}
  
+int products(char product[]){
+    switch(product[0]){
+        case 'A':
+            if(product[1]=='5'){
+                return 1;
+            }
+            break;
+        case 'B':
+            if(product[1]=='C'){
+                if(product[2]=='1'){
+                    return 4;
+                }
+            }
+            break;
+        case 'C':
+            if(product[1]=='7'){
+                return 3;
+            }
+            break;
+        case 'D':
+            if(product[1]=='9'){
+                return 2;
+            }
+            break;
+        default:
+            return 0;
+    }
+}
+
+void GLCD_ClearLine(int y){
+    if(y<8 && y>-1){
+        for(int i=0;i<128;i++){
+            GLCD_SetCursor(y,i);
+            glcd_DataWrite(0x00);
+        }
+    }
+}

@@ -38,7 +38,7 @@ Errors and omissions should be reported to codelibraries@exploreembedded.com
  
 #ifndef _DELAY_H
 #define _DELAY_H
-
+#define _XTAL_FREQ 16000000
 #include"stdutils.h"
 
 /* Count to generate 1ms delay at 20Mhz clock.

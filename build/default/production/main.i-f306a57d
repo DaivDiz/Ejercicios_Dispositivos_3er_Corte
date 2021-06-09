@@ -1,4 +1,4 @@
-# 1 "glcd.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "glcd.c" 2
-# 24 "glcd.c"
+# 1 "main.c" 2
 # 1 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\proc\\pic18f4550.h" 1 3
 # 44 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\proc\\pic18f4550.h" 3
 # 1 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\__at.h" 1 3
@@ -5462,16 +5461,7 @@ extern volatile __bit nW __attribute__((address(0x7E3A)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 24 "glcd.c" 2
-
-# 1 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\pic18.h" 1 3
-
-
-
-
-# 1 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\htc.h" 1 3
-
-
+# 1 "main.c" 2
 
 # 1 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 3
@@ -5583,7 +5573,15 @@ extern void __builtin_software_breakpoint(void);
 
 
 # 1 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\pic18.h" 1 3
-# 33 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
+
+
+
+
+# 1 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\htc.h" 1 3
+
+
+
+# 1 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 1 3
 # 5 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\htc.h" 2 3
 # 6 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\pic18.h" 2 3
 
@@ -5624,10 +5622,152 @@ extern __attribute__((nonreentrant)) void _delay(unsigned long);
 extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
-# 25 "glcd.c" 2
+# 33 "C:/Users/dsdia/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\xc.h" 2 3
+# 2 "main.c" 2
 
-# 1 "./stdutils.h" 1
-# 44 "./stdutils.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 3 "main.c" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5713,7 +5853,417 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 44 "./stdutils.h" 2
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 2 3
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 33 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef float float_t;
+
+
+
+
+typedef double double_t;
+# 15 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 2 3
+# 42 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 3
+int __fpclassifyf(float);
+
+
+
+
+
+
+
+int __signbitf(float);
+# 59 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 3
+double acos(double);
+float acosf(float);
+long double acosl(long double);
+
+
+
+double acosh(double);
+float acoshf(float);
+long double acoshl(long double);
+
+
+
+double asin(double);
+float asinf(float);
+long double asinl(long double);
+
+
+
+double asinh(double);
+float asinhf(float);
+long double asinhl(long double);
+
+
+
+double atan(double);
+float atanf(float);
+long double atanl(long double);
+
+
+
+double atan2(double, double);
+float atan2f(float, float);
+long double atan2l(long double, long double);
+
+
+
+double atanh(double);
+float atanhf(float);
+long double atanhl(long double);
+
+
+
+double cbrt(double);
+float cbrtf(float);
+long double cbrtl(long double);
+
+
+
+double ceil(double);
+float ceilf(float);
+long double ceill(long double);
+
+
+
+double copysign(double, double);
+float copysignf(float, float);
+long double copysignl(long double, long double);
+
+
+
+double cos(double);
+float cosf(float);
+long double cosl(long double);
+
+
+
+double cosh(double);
+float coshf(float);
+long double coshl(long double);
+
+
+
+double erf(double);
+float erff(float);
+long double erfl(long double);
+
+
+
+double erfc(double);
+float erfcf(float);
+long double erfcl(long double);
+
+
+
+double exp(double);
+float expf(float);
+long double expl(long double);
+
+
+
+double exp2(double);
+float exp2f(float);
+long double exp2l(long double);
+
+
+
+double expm1(double);
+float expm1f(float);
+long double expm1l(long double);
+
+
+
+double fabs(double);
+float fabsf(float);
+long double fabsl(long double);
+
+
+
+double fdim(double, double);
+float fdimf(float, float);
+long double fdiml(long double, long double);
+
+
+
+double floor(double);
+float floorf(float);
+long double floorl(long double);
+
+
+
+double fma(double, double, double);
+float fmaf(float, float, float);
+long double fmal(long double, long double, long double);
+
+
+
+double fmax(double, double);
+float fmaxf(float, float);
+long double fmaxl(long double, long double);
+
+
+
+double fmin(double, double);
+float fminf(float, float);
+long double fminl(long double, long double);
+
+
+
+double fmod(double, double);
+float fmodf(float, float);
+long double fmodl(long double, long double);
+
+
+
+double frexp(double, int *);
+float frexpf(float, int *);
+long double frexpl(long double, int *);
+
+
+
+double hypot(double, double);
+float hypotf(float, float);
+long double hypotl(long double, long double);
+
+
+
+int ilogb(double);
+int ilogbf(float);
+int ilogbl(long double);
+
+
+
+double ldexp(double, int);
+float ldexpf(float, int);
+long double ldexpl(long double, int);
+
+
+
+double lgamma(double);
+float lgammaf(float);
+long double lgammal(long double);
+
+
+
+long long llrint(double);
+long long llrintf(float);
+long long llrintl(long double);
+
+
+
+long long llround(double);
+long long llroundf(float);
+long long llroundl(long double);
+
+
+
+double log(double);
+float logf(float);
+long double logl(long double);
+
+
+
+double log10(double);
+float log10f(float);
+long double log10l(long double);
+
+
+
+double log1p(double);
+float log1pf(float);
+long double log1pl(long double);
+
+
+
+double log2(double);
+float log2f(float);
+long double log2l(long double);
+
+
+
+double logb(double);
+float logbf(float);
+long double logbl(long double);
+
+
+
+long lrint(double);
+long lrintf(float);
+long lrintl(long double);
+
+
+
+long lround(double);
+long lroundf(float);
+long lroundl(long double);
+
+
+
+double modf(double, double *);
+float modff(float, float *);
+long double modfl(long double, long double *);
+
+
+
+double nan(const char *);
+float nanf(const char *);
+long double nanl(const char *);
+
+
+
+double nearbyint(double);
+float nearbyintf(float);
+long double nearbyintl(long double);
+
+
+
+double nextafter(double, double);
+float nextafterf(float, float);
+long double nextafterl(long double, long double);
+
+
+
+double nexttoward(double, long double);
+float nexttowardf(float, long double);
+long double nexttowardl(long double, long double);
+
+
+
+
+double pow(double, double);
+__attribute__((nonreentrant)) float powf(float, float);
+long double powl(long double, long double);
+
+
+
+double remainder(double, double);
+float remainderf(float, float);
+long double remainderl(long double, long double);
+
+
+
+double remquo(double, double, int *);
+float remquof(float, float, int *);
+long double remquol(long double, long double, int *);
+
+
+
+double rint(double);
+float rintf(float);
+long double rintl(long double);
+
+
+
+double round(double);
+float roundf(float);
+long double roundl(long double);
+
+
+
+double scalbln(double, long);
+float scalblnf(float, long);
+long double scalblnl(long double, long);
+
+
+
+double scalbn(double, int);
+float scalbnf(float, int);
+long double scalbnl(long double, int);
+
+
+
+double sin(double);
+float sinf(float);
+long double sinl(long double);
+
+
+
+double sinh(double);
+float sinhf(float);
+long double sinhl(long double);
+
+
+
+double sqrt(double);
+float sqrtf(float);
+long double sqrtl(long double);
+
+
+
+double tan(double);
+float tanf(float);
+long double tanl(long double);
+
+
+
+double tanh(double);
+float tanhf(float);
+long double tanhl(long double);
+
+
+
+double tgamma(double);
+float tgammaf(float);
+long double tgammal(long double);
+
+
+
+double trunc(double);
+float truncf(float);
+long double truncl(long double);
+# 423 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\math.h" 3
+extern int signgam;
+
+double j0(double);
+double j1(double);
+double jn(int, double);
+
+double y0(double);
+double y1(double);
+double yn(int, double);
+# 5 "main.c" 2
+
+
+
+
+#pragma config FOSC = HS, FCMEN = OFF, IESO = OFF
+#pragma config PWRT = OFF, BOR = OFF, BORV = 0, VREGEN = OFF
+#pragma config WDT = OFF, WDTPS = 32768, CCP2MX = ON, PBADEN = OFF
+#pragma config MCLRE = ON, STVREN = OFF, LVP = OFF
+
+
+
+
+# 1 "./glcd.h" 1
+# 27 "./glcd.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdarg.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdarg.h" 2 3
+
+
+#pragma intrinsic(__va_start)
+#pragma intrinsic(__va_arg)
+
+extern void * __va_start(void);
+extern void * __va_arg(void *, ...);
+# 27 "./glcd.h" 2
+
+# 1 "./stdutils.h" 1
 # 67 "./stdutils.h"
 typedef signed char sint8_t;
 typedef unsigned char uint8_t;
@@ -5745,35 +6295,7 @@ typedef enum
     E_DECIMAL = 10,
     E_HEX = 16
 }NumericSystem_et;
-# 26 "glcd.c" 2
-
-# 1 "./glcd.h" 1
-# 27 "./glcd.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdarg.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-
-
-
-
-
-typedef void * va_list[1];
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdarg.h" 2 3
-
-
-#pragma intrinsic(__va_start)
-#pragma intrinsic(__va_arg)
-
-extern void * __va_start(void);
-extern void * __va_arg(void *, ...);
-# 27 "./glcd.h" 2
-
+# 28 "./glcd.h" 2
 
 # 1 "./delay.h" 1
 # 65 "./delay.h"
@@ -5817,670 +6339,358 @@ void GLCD_HorizontalGraph(uint8_t var_barGraphNumber_u8, uint8_t var_percentageV
 
 void GLCD_Grahp(uint8_t val);
 void glcd_DataWrite(uint8_t dat);
-# 27 "glcd.c" 2
-
-
-
-#pragma warning push
-#pragma warning disable 752
-#pragma warning disable 1496
-#pragma warning disable 520
-#pragma warning disable 1498
-#pragma warning disable 356
+# 16 "main.c" 2
 
 
 
 
+long map();
+int column(),row(),products();
+void tapas(),reset(),configPWM();
 
 
 
-void glcd_SelectPage0();
-void glcd_SelectPage1();
-void glcd_BusyCheck();
-void glcd_CmdWrite( uint8_t cmd);
-void glcd_DataWrite( uint8_t dat);
+uint8_t pA=0x02;
+uint8_t pB;
+uint8_t v1;
+int index=0;
 
 
+int xM,yM,ayM,cond;
+char comb[4][4]={ '1','2','3','A',
+                    '4','5','6','B',
+                    '7','8','9','C',
+                    '*','0','#','D' };
 
 
-const uint8_t A_GlcdFontTable_U8[][5]=
+int sX=40,sY=1,nC=4,xSC,ySC,contChar=1;
+char valM;
+
+
+int codColor;
+char codTec[4];
+
+
+unsigned int saldo;
+
+
+long LDR;
+int LM35=18;
+
+
+char prod[4][4]={ 'A','D','C','B',
+                    '5','9','7','C',
+                    ' ',' ',' ','1',
+                    ' ',' ',' ',' '};
+int cost[4]={35,50,100,85};
+
+void main()
 {
+    xSC=sX;
+    ySC=sY;
 
-0x00, 0x00, 0x00, 0x00, 0x00,
-0x00, 0x00, 0x2f, 0x00, 0x00,
-0x00, 0x07, 0x00, 0x07, 0x00,
-0x14, 0x7f, 0x14, 0x7f, 0x14,
-0x24, 0x2a, 0x7f, 0x2a, 0x12,
-0x23, 0x13, 0x08, 0x64, 0x62,
-0x36, 0x49, 0x55, 0x22, 0x50,
-0x00, 0x05, 0x03, 0x00, 0x00,
-0x00, 0x1c, 0x22, 0x41, 0x00,
-0x00, 0x41, 0x22, 0x1c, 0x00,
-0x14, 0x08, 0x3E, 0x08, 0x14,
-0x08, 0x08, 0x3E, 0x08, 0x08,
-0x00, 0x00, 0xA0, 0x60, 0x00,
-0x08, 0x08, 0x08, 0x08, 0x08,
-0x00, 0x60, 0x60, 0x00, 0x00,
-0x20, 0x10, 0x08, 0x04, 0x02,
-
-0x3E, 0x51, 0x49, 0x45, 0x3E,
-0x00, 0x42, 0x7F, 0x40, 0x00,
-0x42, 0x61, 0x51, 0x49, 0x46,
-0x21, 0x41, 0x45, 0x4B, 0x31,
-0x18, 0x14, 0x12, 0x7F, 0x10,
-0x27, 0x45, 0x45, 0x45, 0x39,
-0x3C, 0x4A, 0x49, 0x49, 0x30,
-0x01, 0x71, 0x09, 0x05, 0x03,
-0x36, 0x49, 0x49, 0x49, 0x36,
-0x06, 0x49, 0x49, 0x29, 0x1E,
-
-0x00, 0x36, 0x36, 0x00, 0x00,
-0x00, 0x56, 0x36, 0x00, 0x00,
-0x08, 0x14, 0x22, 0x41, 0x00,
-0x14, 0x14, 0x14, 0x14, 0x14,
-0x00, 0x41, 0x22, 0x14, 0x08,
-0x02, 0x01, 0x51, 0x09, 0x06,
-0x32, 0x49, 0x59, 0x51, 0x3E,
-
-0x7C, 0x12, 0x11, 0x12, 0x7C,
-0x7F, 0x49, 0x49, 0x49, 0x36,
-0x3E, 0x41, 0x41, 0x41, 0x22,
-0x7F, 0x41, 0x41, 0x22, 0x1C,
-0x7F, 0x49, 0x49, 0x49, 0x41,
-0x7F, 0x09, 0x09, 0x09, 0x01,
-0x3E, 0x41, 0x49, 0x49, 0x7A,
-0x7F, 0x08, 0x08, 0x08, 0x7F,
-0x00, 0x41, 0x7F, 0x41, 0x00,
-0x20, 0x40, 0x41, 0x3F, 0x01,
-0x7F, 0x08, 0x14, 0x22, 0x41,
-0x7F, 0x40, 0x40, 0x40, 0x40,
-0x7F, 0x02, 0x0C, 0x02, 0x7F,
-0x7F, 0x04, 0x08, 0x10, 0x7F,
-0x3E, 0x41, 0x41, 0x41, 0x3E,
-0x7F, 0x09, 0x09, 0x09, 0x06,
-0x3E, 0x41, 0x51, 0x21, 0x5E,
-0x7F, 0x09, 0x19, 0x29, 0x46,
-0x46, 0x49, 0x49, 0x49, 0x31,
-0x01, 0x01, 0x7F, 0x01, 0x01,
-0x3F, 0x40, 0x40, 0x40, 0x3F,
-0x1F, 0x20, 0x40, 0x20, 0x1F,
-0x3F, 0x40, 0x38, 0x40, 0x3F,
-0x63, 0x14, 0x08, 0x14, 0x63,
-0x07, 0x08, 0x70, 0x08, 0x07,
-0x61, 0x51, 0x49, 0x45, 0x43,
-
-0x00, 0x7F, 0x41, 0x41, 0x00,
-0x55, 0xAA, 0x55, 0xAA, 0x55,
-0x00, 0x41, 0x41, 0x7F, 0x00,
-0x04, 0x02, 0x01, 0x02, 0x04,
-0x80, 0x80, 0x80, 0x80, 0x80,
-0x80, 0x00, 0x00, 0x00, 0x00,
-
-0x20, 0x54, 0x54, 0x54, 0x78,
-0x7F, 0x48, 0x44, 0x44, 0x38,
-0x38, 0x44, 0x44, 0x44, 0x20,
-0x38, 0x44, 0x44, 0x48, 0x7F,
-0x38, 0x54, 0x54, 0x54, 0x18,
-0x08, 0x7E, 0x09, 0x01, 0x02,
-0x18, 0xA4, 0xA4, 0xA4, 0x7C,
-0x7F, 0x08, 0x04, 0x04, 0x78,
-0x00, 0x44, 0x7D, 0x40, 0x00,
-0x40, 0x80, 0x84, 0x7D, 0x00,
-0x7F, 0x10, 0x28, 0x44, 0x00,
-0x00, 0x41, 0x7F, 0x40, 0x00,
-0x7C, 0x04, 0x18, 0x04, 0x78,
-0x7C, 0x08, 0x04, 0x04, 0x78,
-0x38, 0x44, 0x44, 0x44, 0x38,
-0xFC, 0x24, 0x24, 0x24, 0x18,
-0x18, 0x24, 0x24, 0x18, 0xFC,
-0x7C, 0x08, 0x04, 0x04, 0x08,
-0x48, 0x54, 0x54, 0x54, 0x20,
-0x04, 0x3F, 0x44, 0x40, 0x20,
-0x3C, 0x40, 0x40, 0x20, 0x7C,
-0x1C, 0x20, 0x40, 0x20, 0x1C,
-0x3C, 0x40, 0x30, 0x40, 0x3C,
-0x44, 0x28, 0x10, 0x28, 0x44,
-0x1C, 0xA0, 0xA0, 0xA0, 0x7C,
-0x44, 0x64, 0x54, 0x4C, 0x44,
-
-0x00, 0x10, 0x7C, 0x82, 0x00,
-0x3F, 0x00, 0x00, 0x00, 0x00,
-0x00, 0x82, 0x7C, 0x10, 0x00,
-0x00, 0x06, 0x09, 0x09, 0x06
-};
-
-GLCD_Config GLCD;
-# 168 "glcd.c"
-void GLCD_Init()
-{
-    TRISB = 0x00;
-    TRISD &= ~((1<<0)|(1<<1)|(1<<2)|(1<<3)|(1<<4));
+    TRISA=0x21;
 
 
- glcd_SelectPage0();
- glcd_CmdWrite(0x3f);
- glcd_SelectPage1();
- glcd_CmdWrite(0x3f);
- DELAY_ms(10);
+    TRISE=0x07;
 
 
- glcd_SelectPage0();
- glcd_CmdWrite(0xc0);
- glcd_SelectPage1();
- glcd_CmdWrite(0xc0);
- GLCD_GoToPage(0);
 
+    TRISC=0xFF;
+    TRISCbits.RC6=1;
+    TRISCbits.RC7=0;
 
- GLCD_Clear();
+    ADCON1=0x0E;
+    ADCON0=0x01;
+    ADCON2=0xB1;
 
+    GLCD_Init();
 
- GLCD.PageNum=0;
- GLCD.LineNum=0xB8;
- GLCD.CursorPos=0x40;
- GLCD_GoToPage(0);
-}
-# 215 "glcd.c"
-void GLCD_DisplayChar(uint8_t ch)
-{
- uint8_t dat,i=0;
+    while(1){
+        configPWM();
+        PORTCbits.RC7=0;
 
-
- if(((GLCD.PageNum == 0x01) && ((GLCD.CursorPos+5)>=128)) || (ch=='\n'))
- {
-
-
-  GLCD_GoToNextLine();
- }
- if(ch!='\n')
- {
-  ch = ch-0x20;
-
-  while(1)
-  {
-   if((GLCD.PageNum == 0x00) && (GLCD.CursorPos==0x80))
-   {
-
-
-    GLCD_GoToPage(1);
-   }
-
-   dat= A_GlcdFontTable_U8[ch][i];
-
-
-   glcd_DataWrite(dat);
-   GLCD.CursorPos++;
-
-   i++;
-
-   if(i==5)
-   {
-    glcd_DataWrite(0x00);
-    GLCD.CursorPos++;
-    break;
-   }
-  }
- }
-}
-# 274 "glcd.c"
-void GLCD_DisplayString(uint8_t *ptr)
-{
- while(*ptr)
-  GLCD_DisplayChar(*ptr++);
-}
-# 389 "glcd.c"
-void GLCD_DisplayNumber(uint8_t v_numericSystem_u8, uint32_t v_number_u32, uint8_t v_numOfDigitsToDisplay_u8)
-{
-    uint8_t i=0,a[10];
-
-    if(2u == v_numericSystem_u8)
-    {
-        while(v_numOfDigitsToDisplay_u8!=0)
+        if(PORTCbits.RC0==0)
         {
+            GLCD_DisplayLogo(LogoBitMap);
+            _delay((unsigned long)((2500)*(16000000/4000.0)));
+            GLCD_Clear();
+            GLCD_SetCursor(0,0);
+            GLCD_Printf("     Bienvenido al \n dispensador MLP3000");
+            _delay((unsigned long)((3500)*(16000000/4000.0)));
+            GLCD_Clear();
+            PORTCbits.RC7=1;
+            _delay((unsigned long)((500)*(16000000/4000.0)));
+
+            while(1){
+
+                ADCON0=0x01;
+                ADCON2=0xB1;
+                ADCON0bits.GODONE=1;
+
+                if(ADCON0bits.GODONE==1){
+                    LDR=(ADRESH*255)+(ADRESL);
+                }
+
+                GLCD_SetCursor(0,0);
+                GLCD_Printf("LDR: %d",LDR);
+                tapas(LDR,5,0);
+
+                ADCON0bits.ADON=0;
 
 
-          i = (((v_number_u32)&(((uint32_t)1<<((v_numOfDigitsToDisplay_u8-1)))))!=0u);
-          GLCD_DisplayChar(((i)+0x30));
-          v_numOfDigitsToDisplay_u8--;
-        }
-    }
-    else if(v_number_u32==0)
-    {
-
-        for(i=0;((i<v_numOfDigitsToDisplay_u8) && (i<10u));i++)
-            GLCD_DisplayChar('0');
-    }
-    else
-    {
-        for(i=0;i<v_numOfDigitsToDisplay_u8;i++)
-        {
+                GLCD_SetCursor(7,103);
+                GLCD_Printf("18~C");
 
 
-            if(v_number_u32!=0)
-            {
+
+
+                pB=~pA;
+                PORTA=pB;
 
 
 
 
 
+                ayM=column();
 
-                a[i]=(uint32_t)(v_number_u32 - (v_numericSystem_u8 * (uint32_t)(v_number_u32/v_numericSystem_u8)));
-                v_number_u32=v_number_u32/v_numericSystem_u8;
+
+                xM=row(pA);
+                yM=(ayM-1);
+
+                cond=ayM;
+
+                GLCD_SetCursor(1,0);
+                GLCD_Printf("Code: ");
+
+                char ped[4];
+
+                if(ayM>0){
+                    if(xSC<(sX+(nC*6)))
+                    {
+                        GLCD_SetCursor(ySC,xSC);
+                        valM=comb[xM][yM];
+                        GLCD_Printf("%c",valM);
+
+
+                        ySC=1;
+                        xSC+=6;
+
+
+                        codTec[contChar-1]=valM;
+
+
+                        contChar++;
+
+                        while(1){
+                            ayM=column();
+                            if(cond!=ayM){
+                                break;
+                            }
+                        }
+                    }
+
+                    if((contChar)>4){
+
+                        for(int i=0;i<4;i++){
+                            for(int j=0;j<4;j++){
+                                char product=prod[i][j];
+# 183 "main.c"
+                                    GLCD_SetCursor(6,0);
+                                    GLCD_Printf("%c",product);
+
+                                    GLCD_SetCursor(6,80);
+                                    GLCD_Printf("%c",codTec[i]);
+
+                                    _delay((unsigned long)((2000)*(16000000/4000.0)));
+
+                            }
+                        }
+
+
+
+
+
+
+                    }
+                }
+
+
+
+                GLCD_SetCursor(3,0);
+                GLCD_Printf("Saldo: %d",saldo);
+                GLCD_SetCursor(5,0);
+                GLCD_Printf("Cont: %1d",(contChar));
+
+
+
+                if(PORTCbits.RC0==1){
+                    GLCD_Clear();
+                    GLCD_SetCursor(0,0);
+                    GLCD_Printf("OFF");
+                    break;
+                }
+
+                if(PORTCbits.RC6==1){
+                    reset();
+                }
+
+                pA=(pA<<1);
+
+                index++;
+                if(index>3){
+                    index=0;
+                    pA=0x02;
+                }
+
             }
-            else if( (v_numOfDigitsToDisplay_u8 == 0xffu) ||
-                     (v_numOfDigitsToDisplay_u8 > 10u))
-            {
-
-
-                break;
-            }
-            else
-            {
-
-
-
-                a[i]=0;
-            }
-        }
-
-         while(i!=0)
-        {
-
-          GLCD_DisplayChar((((a[i-1])>0x09) ? ((a[i-1]) + 0x37): ((a[i-1]) + 0x30)));
-          i--;
         }
     }
 }
-# 526 "glcd.c"
-void GLCD_Printf(const char *argList, ...)
-{
-    const char *ptr;
-    va_list argp;
-    sint16_t v_num_s16;
-    sint32_t v_num_s32;
-    uint16_t v_num_u16;
-    uint32_t v_num_u32;
-    char *str;
-    char ch;
-    uint8_t v_numOfDigitsToDisp_u8;
+
+
+void reset(){
+    for(int i=0; i<4;i++){
+        GLCD_SetCursor(sY,(sX+(i*6)));
+        GLCD_Printf(" ");
+        xSC=sX;
+
+    }
+
+}
+
+long map(long x, long in_m, long in_M, long out_m, long out_M){
+    return (x-in_m)*(out_M-out_m)/(in_M-in_m)+out_m;
+}
+
+void tapas(long val, int y, int x){
+    int ranges[10]={ 335,345,
+                        260,275,
+                        175,190,
+                        45,55,
+                        15,25};
+    GLCD_SetCursor(y,x);
 
 
 
 
-    *argp = __va_start();
+        if(val>ranges[0]&&val<=ranges[1]){
+            GLCD_Printf("\nColor: Blanco");
+            codColor=1;
+            saldo+=100;
+        } else {
+            if(val>ranges[2] && val<=ranges[3]){
+                GLCD_Printf("\nColor: Amarillo");
+                codColor=2;
+                saldo+=50;
+            } else {
+                if(val>ranges[4] && val<=ranges[5]){
+                    GLCD_Printf("\nColor: Azul Claro");
+                    codColor=3;
+                    saldo+=20;
+                } else {
+                    if(val>ranges[6] && val<=ranges[7]){
+                        GLCD_Printf("\nColor: Verde Oscuro");
+                        codColor=4;
+                        saldo+=10;
+                    } else {
+                        if(val>ranges[8] && val<=ranges[9]){
+                            GLCD_Printf("\nColor: Azul Oscuro");
+                            codColor=5;
+                            saldo+=5;
+                        }
 
 
-    for(ptr = argList; *ptr != '\0'; ptr++)
-    {
 
-        ch= *ptr;
-        if(ch == '%')
-        {
-            ptr++;
-            ch = *ptr;
-           if((ch>=0x30) && (ch<=0x39))
-            {
-               v_numOfDigitsToDisp_u8 = 0;
-               while((ch>=0x30) && (ch<=0x39))
-                {
-                   v_numOfDigitsToDisp_u8 = (v_numOfDigitsToDisp_u8 * 10) + (ch-0x30);
-                   ptr++;
-                   ch = *ptr;
+
+
                 }
             }
-            else
-            {
-              v_numOfDigitsToDisp_u8 = 0xffu;
-            }
-
-
-            switch(ch)
-            {
-            case 'C':
-            case 'c':
-                ch = (*(int *)__va_arg(*(int **)argp, (int)0));
-                GLCD_DisplayChar(ch);
-                break;
-
-            case 'd':
-                v_num_s16 = (*(int *)__va_arg(*(int **)argp, (int)0));
-                if(v_num_s16<0)
-                 {
-                   v_num_s16 = -v_num_s16;
-                   GLCD_DisplayChar('-');
-                 }
-                GLCD_DisplayNumber(10u,v_num_s16,v_numOfDigitsToDisp_u8);
-                break;
-
-            case 'D':
-                v_num_s32 = (*(sint32_t *)__va_arg(*(sint32_t **)argp, (sint32_t)0));
-                if(v_num_s32<0)
-                 {
-                   v_num_s32 = -v_num_s32;
-                   GLCD_DisplayChar('-');
-                 }
-                GLCD_DisplayNumber(10u,v_num_s32,v_numOfDigitsToDisp_u8);
-                break;
-
-            case 'u':
-                v_num_u16 = (*(int *)__va_arg(*(int **)argp, (int)0));
-                GLCD_DisplayNumber(10u,v_num_u16,v_numOfDigitsToDisp_u8);
-                break;
-
-            case 'U':
-                v_num_u32 = (*(uint32_t *)__va_arg(*(uint32_t **)argp, (uint32_t)0));
-                GLCD_DisplayNumber(10u,v_num_u32,v_numOfDigitsToDisp_u8);
-                break;
-
-            case 'x':
-                v_num_u16 = (*(int *)__va_arg(*(int **)argp, (int)0));
-                GLCD_DisplayNumber(16u,v_num_u16,v_numOfDigitsToDisp_u8);
-                break;
-
-            case 'X':
-                v_num_u32 = (*(uint32_t *)__va_arg(*(uint32_t **)argp, (uint32_t)0));
-                GLCD_DisplayNumber(16u,v_num_u32,v_numOfDigitsToDisp_u8);
-                break;
-
-
-            case 'b':
-                v_num_u16 = (*(int *)__va_arg(*(int **)argp, (int)0));
-                if(v_numOfDigitsToDisp_u8 == 0xffu)
-                   v_numOfDigitsToDisp_u8 = 16;
-                GLCD_DisplayNumber(2u,v_num_u16,v_numOfDigitsToDisp_u8);
-                break;
-
-            case 'B':
-                v_num_u32 = (*(uint32_t *)__va_arg(*(uint32_t **)argp, (uint32_t)0));
-                if(v_numOfDigitsToDisp_u8 == 0xffu)
-                   v_numOfDigitsToDisp_u8 = 16;
-                GLCD_DisplayNumber(2u,v_num_u32,v_numOfDigitsToDisp_u8);
-                break;
-
-
-            case 'F':
-            case 'f':
-
-
-
-
-                break;
-
-
-            case 'S':
-            case 's':
-                str = (*(char * *)__va_arg(*(char * **)argp, (char *)0));
-                GLCD_DisplayString(str);
-                break;
-
-            case '%':
-                GLCD_DisplayChar('%');
-                break;
-            }
-        }
-        else
-        {
-
-            GLCD_DisplayChar(ch);
         }
     }
-
-    ((void)0);
 }
-# 675 "glcd.c"
-void GLCD_Clear()
-{
- uint8_t line,cursor;
 
- for(line=0;line<8;line++)
- {
-  glcd_SelectPage0();
-  glcd_CmdWrite(0x40);
-  glcd_CmdWrite(0xB8 +line);
-  for(cursor=0;cursor<128;cursor++)
-  {
-   if(cursor==64)
-   {
-    glcd_SelectPage1();
-    glcd_CmdWrite(0x40);
-    glcd_CmdWrite(0xB8 +line);
-   }
-   glcd_DataWrite(0x00);
-  }
- }
-
- GLCD_GoToLine(0);
+int row(int portA){
+    switch(portA){
+        case 2:
+            return 0;
+            break;
+        case 4:
+            return 1;
+            break;
+        case 8:
+            return 2;
+            break;
+        case 16:
+            return 3;
+            break;
+    }
 }
-# 712 "glcd.c"
-void GLCD_GoToPage(uint8_t pageNumber)
-{
 
- if((pageNumber==0) || (pageNumber ==1))
- {
-
-  if(pageNumber == 0)
-  {
-
-   glcd_SelectPage0();
-  }
-  else
-  {
-   glcd_SelectPage1();
-  }
-
-  GLCD.PageNum=pageNumber;
-  GLCD.CursorPos=0x40;
-  glcd_CmdWrite(GLCD.LineNum);
-  glcd_CmdWrite(GLCD.CursorPos);
- }
-}
-# 748 "glcd.c"
-void GLCD_GoToLine(uint8_t lineNumber)
-{
- if(lineNumber<8)
- {
-
-  GLCD.LineNum = lineNumber+0xB8;
-  GLCD_GoToPage(0);
- }
-}
-# 772 "glcd.c"
-void GLCD_GoToNextLine()
-{
-
-
- GLCD.LineNum++;
- if(GLCD.LineNum > 0xBF)
-  GLCD.LineNum = 0xB8;
- GLCD_GoToPage(0);
-}
-# 801 "glcd.c"
-void GLCD_SetCursor(uint8_t lineNumber,uint8_t CursorPosition)
-{
-
- uint8_t pageNumber;
-
- if((lineNumber <= 0x07u) && (CursorPosition <= 128))
- {
-  pageNumber = CursorPosition / 64;
-  CursorPosition = CursorPosition % 0x3f;
-  if(pageNumber==0x00)
-  {
-   glcd_SelectPage0();
-  }
-  else
-  {
-   glcd_SelectPage1();
-  }
-
-  GLCD.PageNum = pageNumber;
-  GLCD.LineNum=lineNumber | 0xB8;
-  GLCD.CursorPos=CursorPosition |0x40;
-
-  glcd_CmdWrite(GLCD.CursorPos);
-  glcd_CmdWrite(GLCD.LineNum);
- }
-}
-# 843 "glcd.c"
-void GLCD_DisplayLogo(const char ptr_Logo[])
-{
- uint8_t line,cursor;
-
- for(line=0;line<8;line++)
- {
-  glcd_SelectPage0();
-     glcd_CmdWrite(0x40);
-  glcd_CmdWrite(0xB8 +line);
-  for(cursor=0;cursor<128;cursor++)
-  {
-   if(cursor==64)
-   {
-    glcd_SelectPage1();
-    glcd_CmdWrite(0x40);
-    glcd_CmdWrite(0xB8 +line);
-   }
-   glcd_DataWrite(*ptr_Logo++);
-  }
- }
-}
-# 877 "glcd.c"
-void GLCD_VerticalGraph(uint8_t var_barGraphNumber_u8, uint8_t var_percentageValue_u8)
-{
-    uint8_t var_lineNumberToStartDisplay_u8,i,j,var_barGraphPosition_u8;
-    uint8_t lineNumber,var_valueToDisplay_u8;
-
-
-    if((var_barGraphNumber_u8 < 4) && (var_percentageValue_u8<=100))
-    {
-        var_barGraphPosition_u8 = var_barGraphNumber_u8 * 32;
-
-        GLCD_SetCursor(0,var_barGraphPosition_u8+8);
-        GLCD_DisplayNumber(E_DECIMAL,var_percentageValue_u8,3);
-
-
-
-        var_percentageValue_u8 = var_percentageValue_u8/2;
-        var_lineNumberToStartDisplay_u8 = (var_percentageValue_u8>>3);
-        lineNumber = 7-var_lineNumberToStartDisplay_u8;
-
-
-        for(i=1;i<8;i++)
-        {
-            GLCD_SetCursor(i,(var_barGraphPosition_u8+12));
-            if(i<lineNumber)
-            {
-                var_valueToDisplay_u8 = 0x00;
-            }
-            else if(i== lineNumber)
-            {
-                var_valueToDisplay_u8 = (uint8_t) (var_percentageValue_u8 - (8 * (uint8_t) (var_percentageValue_u8/8)));
-                var_valueToDisplay_u8 = (0xff<<(8-var_valueToDisplay_u8));
-            }
-            else
-            {
-                var_valueToDisplay_u8 = 0xff;
-            }
-
-            for(j=0;j<12;j++)
-            {
-                glcd_DataWrite(var_valueToDisplay_u8);
+int column(){
+    if(PORTAbits.RA5==0){
+        return 1;
+    } else {
+        if(PORTEbits.RE0==0){
+            return 2;
+        } else {
+            if(PORTEbits.RE1==0){
+                return 3;
+            } else {
+                if(PORTEbits.RE2==0){
+                    return 4;
+                } else {
+                    return 0;
+                }
             }
         }
     }
 }
-# 936 "glcd.c"
-void GLCD_HorizontalGraph(uint8_t var_barGraphNumber_u8, uint8_t var_percentageValue_u8)
-{
-    uint8_t var_lineNumber_u8,i;
-    var_lineNumber_u8 = (var_barGraphNumber_u8 * 2)+1;
 
-    if((var_barGraphNumber_u8 < 4) && (var_percentageValue_u8<=100))
-    {
-        GLCD_GoToPage(0);
-        GLCD_SetCursor(var_lineNumber_u8,0);
+void configPWM(){
+    PR2=0xFF;
+    CCPR1L=0x02;
+    CCP1CONbits.DC1B0=0;
+    CCP1CONbits.DC1B1=0;
 
-        for(i=0;i<var_percentageValue_u8;i++)
-        {
-            if(i==64)
-            GLCD_GoToPage(1);
+    TRISCbits.RC2=0;
+    T2CONbits.T2CKPS=3;
 
-            glcd_DataWrite(0xff);
+    CCP1CONbits.CCP1M0=1;
+    CCP1CONbits.CCP1M1=1;
+    CCP1CONbits.CCP1M2=1;
+    CCP1CONbits.CCP1M3=1;
 
-        }
+    TMR2=0;
 
-        for(i=var_percentageValue_u8;i<100;i++)
-        {
-            if(i==64)
-            GLCD_GoToPage(1);
+    T2CONbits.TMR2ON=1;
+}
 
-            glcd_DataWrite(0x00);
-        }
-
-        GLCD_SetCursor(var_lineNumber_u8,105);
-
-        GLCD_DisplayNumber(E_DECIMAL,var_percentageValue_u8,3);
+int products(char product[]){
+    switch(product[0]){
+        case 'A':
+            if(product[1]=='5'){
+                return 1;
+            }
+            break;
+        case 'B':
+            if(product[1]=='C'){
+                if(product[2]=='1'){
+                    return 4;
+                }
+            }
+            break;
+        case 'C':
+            if(product[1]=='7'){
+                return 3;
+            }
+            break;
+        case 'D':
+            if(product[1]=='9'){
+                return 2;
+            }
+            break;
+        default:
+            return 0;
     }
 }
-# 982 "glcd.c"
-void GLCD_EnableInversion(void)
-{
-    GLCD.Invertdisplay = 0xFF;
-}
-# 1016 "glcd.c"
-void glcd_CmdWrite( uint8_t cmd)
-{
- glcd_BusyCheck();
- PORTB = cmd;
- (((PORTD)) &= ~((uint32_t)1<<((3))));
- (((PORTD)) &= ~((uint32_t)1<<((2))));
- (((PORTD)) |= ((uint32_t)1<<((4))));
- DELAY_us(1);
- (((PORTD)) &= ~((uint32_t)1<<((4))));
-}
-
-
-
-void glcd_DataWrite(uint8_t dat)
-{
- glcd_BusyCheck();
- PORTB = dat ^ GLCD.Invertdisplay;
- (((PORTD)) |= ((uint32_t)1<<((3))));
- (((PORTD)) &= ~((uint32_t)1<<((2))));
- (((PORTD)) |= ((uint32_t)1<<((4))));
-    _delay((unsigned long)((0.5)*(16000000/4000000.0)));
-
- (((PORTD)) &= ~((uint32_t)1<<((4))));
-}
-
-
-
-void glcd_SelectPage0()
-{
- (((PORTD)) |= ((uint32_t)1<<((1))));
- (((PORTD)) &= ~((uint32_t)1<<((0))));
-}
-
-
-
-void glcd_SelectPage1()
-{
- (((PORTD)) |= ((uint32_t)1<<((0))));
- (((PORTD)) &= ~((uint32_t)1<<((1))));
-}
-
-
-
-
-
-void glcd_BusyCheck()
-{
-# 1081 "glcd.c"
- DELAY_us(10);
-
-}
-
-
-
-
-#pragma warning pop
-# 1088 "glcd.c"
-
